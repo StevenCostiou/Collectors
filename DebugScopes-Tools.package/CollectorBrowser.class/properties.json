@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "GLMCompositePresentation",
+	"category" : "DebugScopes-Tools-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selectedCollector",
+		"collectors"
+	],
+	"name" : "CollectorBrowser",
+	"type" : "normal"
+}
