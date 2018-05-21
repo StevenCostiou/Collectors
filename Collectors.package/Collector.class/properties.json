@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:48",
+	"super" : "DebugScopeAbstractControl",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collectedObjects",
+		"collectedClasses",
+		"enabled",
+		"collectAction",
+		"releaseAction",
+		"installer",
+		"omniscientCollectedItems",
+		"isOmniscient",
+		"configuration"
+	],
+	"name" : "Collector",
+	"type" : "normal"
+}

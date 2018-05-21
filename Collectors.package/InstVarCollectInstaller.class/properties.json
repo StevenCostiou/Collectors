@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:46",
+	"super" : "CollectInstaller",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"varClass",
+		"varName"
+	],
+	"name" : "InstVarCollectInstaller",
+	"type" : "normal"
+}

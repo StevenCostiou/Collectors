@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:43",
+	"super" : "Object",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"link",
+		"reifications",
+		"weakObject",
+		"behavior",
+		"collectorNode"
+	],
+	"name" : "CollectInstaller",
+	"type" : "normal"
+}

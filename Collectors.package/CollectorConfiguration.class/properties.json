@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reifications",
+		"conditions",
+		"transformations"
+	],
+	"name" : "CollectorConfiguration",
+	"type" : "normal"
+}

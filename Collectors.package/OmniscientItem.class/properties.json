@@ -1,0 +1,27 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"arguments",
+		"receiver",
+		"entity",
+		"link",
+		"name",
+		"newValue",
+		"node",
+		"selector",
+		"sender",
+		"context",
+		"variable",
+		"collectedObject",
+		"sourceObject",
+		"sourceObjectClass",
+		"transformations"
+	],
+	"name" : "OmniscientItem",
+	"type" : "normal"
+}

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "GLMCompositePresentation",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selectedCollector",
+		"collectors"
+	],
+	"name" : "CollectorsBrowser",
+	"type" : "normal"
+}

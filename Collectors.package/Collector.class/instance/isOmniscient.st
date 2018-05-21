@@ -1,0 +1,3 @@
+behavior
+isOmniscient
+	^ isOmniscient

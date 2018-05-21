@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Announcer",
+	"category" : "Collectors",
+	"classinstvars" : [
+		"default"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CollectorAnnouncer",
+	"type" : "normal"
+}

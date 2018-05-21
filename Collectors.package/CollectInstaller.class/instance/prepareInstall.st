@@ -1,0 +1,3 @@
+installing
+prepareInstall
+	self initializeLink
