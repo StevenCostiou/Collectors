@@ -2,6 +2,6 @@
 ```Smalltalk
 Metacello new
     baseline: 'Collectors';
-    repository: 'github://StevenCostiou/Collectors';
+    repository: 'github://ClotildeToullec/Collectors';
     load.
 ```
