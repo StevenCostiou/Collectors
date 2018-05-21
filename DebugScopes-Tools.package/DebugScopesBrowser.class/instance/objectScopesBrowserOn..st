@@ -9,6 +9,8 @@ objectScopesBrowserOn: browser
 			a act: [ :presentation | self removeObjectScope: presentation selection ] entitled: 'Remove selection'.
 			a fastTable
 				updateOn: ObjectCollectorHasChanged from: [ DebugScopeGlobalAnnouncer default weak ];
+				selectionAct: [ :presentation | presentation selection beWeak ] entitled: 'Be Weak';
+				selectionAct: [ :presentation | presentation selection beOmniscient ] entitled: 'Be Omniscient';
 				selectionAct: [ :presentation | self renameScopingProperty: presentation selection ] entitled: 'Rename...';
 				selectionAct: [ :presentation | 
 					| collector |
@@ -22,11 +24,12 @@ objectScopesBrowserOn: browser
 					collector enabled
 						ifTrue: [ collector disable ] ]
 					entitled: 'Disable';
+					selectionAct: [ :presentation | presentation selection inspect ] entitled: 'Inspect';
 				display: collectors;
-				column: 'Collector' evaluated: [ :each | each asString ] width: 250;
+				column: 'Collector' evaluated: [ :each | each printDefinition ] width: 400;
 				column: 'Collector Type' evaluated: [ :each | each type ] width: 150;
-				column: 'Collected Objects' evaluated: [ :each | each numberOfCollectedObjects ] width: 30;
-				icon: [ :each | 
+				"column: 'Collected Objects' evaluated: [ :each | each numberOfCollectedObjects ] width: 15;"
+					icon: [ :each | 
 					each enabled
 						ifTrue: [ GLMUIThemeExtraIcons glamorousGreenCircle ]
 						ifFalse: [ GLMUIThemeExtraIcons glamorousRedCircle ] ] ].

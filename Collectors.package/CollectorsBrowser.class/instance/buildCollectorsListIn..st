@@ -1,4 +1,4 @@
-as yet unclassified
+building
 buildCollectorsListIn: aPresentation
 	| list |
 	list := aPresentation fastList.

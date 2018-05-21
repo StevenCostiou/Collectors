@@ -1,8 +1,8 @@
 scoping - activation
 activateIfObject: anObject hasInstVarNamed: aVarName ofValue: aValue inMethodNamed: aMethodName
 	self
-		addActivationScope:
-			(ConditionalScope
+		addActivator:
+			(ConditionalActivator
 				scopeToValue: aValue
 				inTempNamed: aVarName
 				inMethodNamed: aMethodName
