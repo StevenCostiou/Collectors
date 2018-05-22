@@ -1,3 +1,3 @@
-as yet unclassified
+api
 inspectAction
 	^ [ :segment | node inspect ]

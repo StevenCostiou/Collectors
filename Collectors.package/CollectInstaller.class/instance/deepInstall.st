@@ -1,0 +1,3 @@
+installing
+deepInstall
+	^ self subclassResponsibility 

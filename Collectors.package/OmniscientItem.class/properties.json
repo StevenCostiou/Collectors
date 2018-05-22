@@ -11,6 +11,7 @@
 		"entity",
 		"link",
 		"name",
+		"oldValue",
 		"newValue",
 		"node",
 		"selector",

@@ -1,4 +1,4 @@
-accessing
+installing
 install
 	self target
 		link: link

@@ -1,3 +1,3 @@
-as yet unclassified
+printing
 buildInComposite: composite
 	installer buildInComposite: composite

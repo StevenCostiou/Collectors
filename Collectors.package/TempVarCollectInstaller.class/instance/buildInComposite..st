@@ -1,4 +1,4 @@
-as yet unclassified
+api
 buildInComposite: composite
 	| pharoMethod node |
 	pharoMethod := composite pharoMethod.

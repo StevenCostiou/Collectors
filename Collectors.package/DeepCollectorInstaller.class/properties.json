@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"installers",
+		"collector",
+		"originalNode"
+	],
+	"name" : "DeepCollectorInstaller",
+	"type" : "normal"
+}

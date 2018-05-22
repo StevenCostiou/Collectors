@@ -1,4 +1,4 @@
-enumerating
+collecting
 collect: anArrayOfReifications
 	| collector object |
 	collector := anArrayOfReifications first.

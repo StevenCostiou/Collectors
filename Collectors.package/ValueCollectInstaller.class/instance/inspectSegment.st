@@ -1,4 +1,4 @@
-as yet unclassified
+api
 inspectSegment
 	| seg |
 	seg := RubUnderlinedSegmentMorph from: node start to: node stop + 1.
