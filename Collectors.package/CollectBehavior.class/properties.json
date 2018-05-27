@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "ClotildeToullec 5/17/2018 16:13",
 	"super" : "Object",
-	"category" : "Collectors",
+	"category" : "Collectors-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"replayValue"
+	],
 	"name" : "CollectBehavior",
 	"type" : "normal"
 }

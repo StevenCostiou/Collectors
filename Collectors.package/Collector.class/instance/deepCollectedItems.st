@@ -1,3 +1,3 @@
 accessing
 deepCollectedItems
-	^ deepCollectedItems ifNil: [ deepCollectedItems := Dictionary new ]
+	^ deepCollectedItems ifNil: [ deepCollectedItems := OrderedCollection new ]

@@ -1,3 +1,5 @@
 installing
 uninstall
-	installer uninstall
+	self turnOffReplay.
+	installer uninstall.
+	self class uninstall: self

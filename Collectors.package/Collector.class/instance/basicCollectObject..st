@@ -1,6 +1,5 @@
 collecting objects
-basicCollectObject: anObject
-	scope ifNotNil: [ scope notifyObjectCollection: anObject in: self ].
+basicCollectObject: anObject	
 	(self collectedObjects anySatisfy: [ :o | o == anObject ])
 		ifTrue: [ ^ self ].
 	self collectedObjects add: anObject.

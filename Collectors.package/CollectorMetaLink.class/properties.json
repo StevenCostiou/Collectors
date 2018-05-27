@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "MetaLink",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collector",
+		"replayMode"
+	],
+	"name" : "CollectorMetaLink",
+	"type" : "normal"
+}

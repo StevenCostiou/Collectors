@@ -1,3 +1,6 @@
 collect - api
 collectInstVarNamed: varName inClass: aClass
-	^ self new collectInstanceVariableNamed: varName fromClass: aClass
+	|collector|
+	collector := self new collectInstanceVariableNamed: varName fromClass: aClass.
+	self registry add: collector.
+	^collector

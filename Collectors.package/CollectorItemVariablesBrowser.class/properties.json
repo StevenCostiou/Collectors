@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "GTObjectVariablesBrowser",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"showSelf"
+	],
+	"name" : "CollectorItemVariablesBrowser",
+	"type" : "normal"
+}

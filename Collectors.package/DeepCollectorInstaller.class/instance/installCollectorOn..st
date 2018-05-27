@@ -1,6 +1,7 @@
 installing
 installCollectorOn: node
 	| installer reifications |
+	(node == originalNode and:[originalNode isVariable not]) ifTrue:[^self].
 	installer := DeepValueCollectInstaller on: collector.
 	installer node: node.
 	installer originalNode: originalNode.

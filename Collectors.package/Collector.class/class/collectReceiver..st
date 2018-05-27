@@ -1,3 +1,6 @@
 collect - api
 collectReceiver: node
-	^self new collectReceiver: node
+	| collector |
+	collector := self new collectReceiver: node.
+	self registry add: collector.
+	^ collector

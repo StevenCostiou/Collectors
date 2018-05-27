@@ -5,4 +5,5 @@ deepInstallOn: aNode
 	deepInstaller := DeepCollectorInstaller new.
 	deepInstaller collector: collector.
 	deepInstaller originalNode: aNode.
-	deepInstaller deepInstall
+	deepInstaller deepInstall.
+	self deepInstallers add: deepInstaller

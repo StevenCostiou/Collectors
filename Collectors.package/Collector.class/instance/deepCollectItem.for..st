@@ -1,4 +1,3 @@
-behavior
+behavior - collection
 deepCollectItem: anItem for: aTopLevelNode
-	(self deepCollectedItems at: aTopLevelNode ifAbsentPut: [ OrderedCollection new ])
-		add: anItem
+	self deepCollectedItems add: anItem

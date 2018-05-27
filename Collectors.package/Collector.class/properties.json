@@ -1,8 +1,10 @@
 {
 	"commentStamp" : "StevenCostiou 3/29/2018 08:48",
-	"super" : "DebugScopeAbstractControl",
-	"category" : "Collectors",
-	"classinstvars" : [ ],
+	"super" : "Object",
+	"category" : "Collectors-Model",
+	"classinstvars" : [
+		"registry"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
@@ -15,7 +17,8 @@
 		"omniscientCollectedItems",
 		"deepCollectedItems",
 		"isOmniscient",
-		"configuration"
+		"configuration",
+		"replayLink"
 	],
 	"name" : "Collector",
 	"type" : "normal"

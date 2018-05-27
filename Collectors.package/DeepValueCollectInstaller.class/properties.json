@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "ValueCollectInstaller",
-	"category" : "Collectors",
+	"category" : "Collectors-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

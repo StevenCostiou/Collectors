@@ -1,3 +1,0 @@
-dependencies
-release
-	scope := nil

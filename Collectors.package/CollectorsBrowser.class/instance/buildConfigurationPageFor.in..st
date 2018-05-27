@@ -17,4 +17,4 @@ buildConfigurationPageFor: aCollector in: aPresentation
 		andShow: [ :a :col | col buildInComposite: a ].
 	tab transmit
 		to: #conditions;
-		andShow:aCollector configuration conditions
+		andShow: aCollector configuration conditions

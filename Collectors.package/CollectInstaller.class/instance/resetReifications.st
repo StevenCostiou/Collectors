@@ -1,6 +1,6 @@
 behavior
 resetReifications
-reifications := OrderedCollection new.
+	reifications := OrderedCollection new.
 	reifications
 		add: self collectorNode;
-		add: self baseReification.
+		addAll: self baseReifications

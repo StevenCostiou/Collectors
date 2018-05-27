@@ -5,4 +5,4 @@ aMethodWithTempVar
 	var := 100 atRandom.
 	1 to: 10 do: [ :i | 
 		var := i.
-		instVar add: i ]
+		instVar2 add: i ]  

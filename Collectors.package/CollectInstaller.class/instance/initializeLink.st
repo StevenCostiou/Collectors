@@ -1,6 +1,6 @@
 initialization
 initializeLink
-	link := MetaLink new.
+	link := self newMetaLink.
 	link control: self control.
 	link metaObject: self behavior.
 	link selector: self selector.

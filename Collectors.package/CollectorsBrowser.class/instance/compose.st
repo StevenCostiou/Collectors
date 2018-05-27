@@ -5,4 +5,7 @@ compose
 	pager := self pager.
 	pager fixedSizePanes: 1.
 	pager showFirst: [ :a | self buildCollectorsListIn: a ].
-	pager show: [ :a :col | self buildConfigurationPageFor: col in: a ]
+	pager
+		show: [ :a :col | 
+			self buildConfigurationPageFor: col in: a.
+			self buildVisualizationPageFor: col in: a ]

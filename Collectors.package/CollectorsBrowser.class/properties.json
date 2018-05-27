@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"selectedCollector",
-		"collectors"
+		"collectors",
+		"itemSegment",
+		"stackedItemSegment"
 	],
 	"name" : "CollectorsBrowser",
 	"type" : "normal"

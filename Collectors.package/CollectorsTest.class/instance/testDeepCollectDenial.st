@@ -1,9 +1,15 @@
 deep collection
 testDeepCollectDenial
-self assert:false
-	"| col node |
-	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
-	col := Collector collectValue: node.	
-	col deepInstall.
+	| col items condition config|
+	col := Collector collectInstVarNamed: 'instVar' inClass: AnObjectWithInstVar.
+	condition := CollectEvaluation new.
+	condition source: 'false'.
+	config := CollectorConfiguration new.
+	config conditions add: condition.
+	col reinstallWith: config.
+
 	AnObjectWithInstVar new aMethodWithTempVar.
-	self halt."
+	
+	items := col deepCollectedItems.
+	
+	self assert: items isEmpty.

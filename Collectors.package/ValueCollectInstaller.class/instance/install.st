@@ -1,3 +1,3 @@
 api
 install
-	node link: link.
+	node link: link

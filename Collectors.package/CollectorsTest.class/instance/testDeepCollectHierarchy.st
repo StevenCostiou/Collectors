@@ -3,15 +3,16 @@ testDeepCollectHierarchy
 	| node col items |
 	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
 	col := Collector collectValue: node.	
-	col deepInstall.
+	
 	AnObjectWithInstVar new aMethodWithTempVar.
 	
-	self assert: col deepCollectedItems size equals: 1.
+	self assert: col omniscientCollectedItems size equals: 1.
 	
-	items := col deepCollectedItems values first.
+	items := col omniscientCollectedItems first backInTimeItems.
 	
-	self assert: items size equals: 3.
-	self assert: items first node parent == items last node.
-	self assert: items second node parent == items last node.
-	self assert: items last node == node.
+	self assert: items size equals: 2.
+	self assert: items first node parent == node.
+	self assert: items first node == node value .
+	self assert: items last node parent == node.
+	self assert: items last node == node variable .
 	

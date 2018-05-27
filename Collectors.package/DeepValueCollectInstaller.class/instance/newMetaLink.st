@@ -1,0 +1,3 @@
+accessing
+newMetaLink
+	^ MetaLink new

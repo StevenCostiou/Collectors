@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "Collectors",
+	"category" : "Collectors-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -21,7 +21,9 @@
 		"collectedObject",
 		"sourceObject",
 		"sourceObjectClass",
-		"transformations"
+		"transformations",
+		"backInTimeItems",
+		"timestamp"
 	],
 	"name" : "OmniscientItem",
 	"type" : "normal"

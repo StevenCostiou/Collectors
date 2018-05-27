@@ -1,9 +1,15 @@
 deep collection
 testDeepCollectCascade
-self assert:false
-	"| col node |
-	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
-	col := Collector collectValue: node.	
-	col deepInstall.
-	AnObjectWithInstVar new aMethodWithTempVar.
-	self halt."
+	| col node items |
+	node := (AnObjectWithInstVar >> #aMethodWithCascade) ast statements first messages last.
+	self flag:'If time fix this, until then no collectors on cascade node'.
+	col := Collector collectValue: node.
+	AnObjectWithInstVar new aMethodWithCascade.
+	
+	items := col omniscientCollectedItems first backInTimeItems.
+	self assert: items first node isMessage.
+	self assert: items last node isMessage.
+	self assert: items last node receiver == items first node.
+	self assert: node receiver == items last node.
+	self assert: col omniscientCollectedItems first receiver == items last collectedObject.
+	self assert: items first collectedObject squared = items last collectedObject
