@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "StevenCostiou 3/29/2018 08:43",
 	"super" : "Object",
-	"category" : "Collectors-Model",
+	"category" : "Collectors",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -10,8 +10,7 @@
 		"reifications",
 		"weakObject",
 		"behavior",
-		"collectorNode",
-		"deepInstallers"
+		"collectorNode"
 	],
 	"name" : "CollectInstaller",
 	"type" : "normal"
