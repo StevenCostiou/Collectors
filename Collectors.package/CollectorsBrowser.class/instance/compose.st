@@ -7,5 +7,5 @@ compose
 	pager showFirst: [ :a | self buildCollectorsListIn: a ].
 	pager
 		show: [ :a :col | 
-			self buildConfigurationPageFor: col in: a.
+			self buildConfigurationPageIn: a.
 			self buildVisualizationPageFor: col in: a ]

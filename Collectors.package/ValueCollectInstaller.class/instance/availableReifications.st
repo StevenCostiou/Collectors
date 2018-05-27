@@ -1,0 +1,3 @@
+as yet unclassified
+availableReifications
+	^ #(#arguments #receiver #entity #link #name #oldValue #newValue #node #selector #sender #context #value #object #class)
