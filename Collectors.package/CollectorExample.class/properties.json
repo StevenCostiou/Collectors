@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "RubTextSegmentMorph",
-	"category" : "Collectors-Browser",
+	"super" : "Object",
+	"category" : "Collectors-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "DBActivatorHighlightSegmentMorph",
+	"name" : "CollectorExample",
 	"type" : "normal"
 }
