@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"instVar"
+		"instVar",
+		"instVar2"
 	],
 	"name" : "AnObjectWithInstVar",
 	"type" : "normal"

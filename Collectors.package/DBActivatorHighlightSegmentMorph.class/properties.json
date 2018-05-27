@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "RubTextSegmentMorph",
-	"category" : "Collectors",
+	"category" : "Collectors-Browser",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

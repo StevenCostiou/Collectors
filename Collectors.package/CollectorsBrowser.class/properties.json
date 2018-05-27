@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"selectedCollector",
-		"collectors"
+		"collectors",
+		"reifications",
+		"allReifications"
 	],
 	"name" : "CollectorsBrowser",
 	"type" : "normal"
