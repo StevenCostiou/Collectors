@@ -4,4 +4,5 @@ release
 	should be overridden by subclasses with any cycles, in which case the 
 	subclass should also include the expression super release."
 
+	self flag: 'Is it still useful ?'.
 	self uninstall

@@ -30,11 +30,11 @@ buildReificationsCheckBoxesIn: presentation for: aCollector
 				andShow: [ :composite | 
 					composite morph
 						morph: [ :morphPresentation | 
-							| checkbox |
-							checkbox := CheckboxMorph new.	" on: self selected: #test changeSelected: #test:."	"new.
-							checkbox model: reifications.
-							checkbox setStateSelector: #add:."
+							| checkbox model |
+							checkbox := CheckboxMorph new.
+							model := ReificationCheckBoxModel on: reificationsHandler forReification: reif.
+							checkbox on: model selected: #state changeSelected: #state:.
 							checkbox label: reif.
 							(aCollector installer availableReifications includes: reif)
 								ifFalse: [ checkbox disable ].
-							checkbox ] ] ]
+							checkbox ]]]

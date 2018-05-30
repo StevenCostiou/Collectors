@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "RubTextSegmentMorph",
+	"super" : "Announcement",
 	"category" : "Collectors-Browser",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "DBActivatorHighlightSegmentMorph",
+	"name" : "SelectedReificationsHaveChanged",
 	"type" : "normal"
 }

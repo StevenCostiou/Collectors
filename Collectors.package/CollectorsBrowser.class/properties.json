@@ -10,8 +10,9 @@
 		"collectors",
 		"itemSegment",
 		"stackedItemSegment",
-		"reifications",
-		"allReifications"
+		"allReifications",
+		"reificationsHandler",
+		"announcer"
 	],
 	"name" : "CollectorsBrowser",
 	"type" : "normal"

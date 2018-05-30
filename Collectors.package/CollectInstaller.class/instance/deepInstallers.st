@@ -1,3 +1,3 @@
 accessing
 deepInstallers
-	^ deepInstallers ifNil: [ deepInstallers := OrderedCollection new ]
+	^ deepInstallers ifNil: [ deepInstallers := OrderedCollection new ] 
