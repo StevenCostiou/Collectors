@@ -18,7 +18,8 @@
 		"deepCollectedItems",
 		"isOmniscient",
 		"configuration",
-		"replayLink"
+		"replayLink",
+		"deepCollectReifications"
 	],
 	"name" : "Collector",
 	"type" : "normal"

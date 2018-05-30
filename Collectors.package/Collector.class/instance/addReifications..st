@@ -1,3 +1,3 @@
-behavior - collection
-addReifications: aCollection
-	aCollection do: [ :reif | installer addReification: reif ]
+behavior - api
+addReifications: anArrayOfReifications
+	installer reifications addAll: anArrayOfReifications

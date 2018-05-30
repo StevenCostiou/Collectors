@@ -29,7 +29,7 @@ buildTransformatiosIn: tab
 			a pharoScript
 				title: 'Edit transformation';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reifications collect: [ :reif | reif -> reif ] ];
+				variableBindings: [ reificationsHandler reifications collect: [ :reif | reif -> reif ] ];
 				display: transfo source;
 				selectionAct: [ :thePane | 
 					| src |

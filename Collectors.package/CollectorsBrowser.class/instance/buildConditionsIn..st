@@ -1,5 +1,13 @@
 building
 buildConditionsIn: tab
+	"withGhostText: 'Write condition';
+		act: [ :thePane | 
+			| src |
+			src := (thePane pane port: #text) value.
+			cond source: src.
+			a update ]
+		on: $s;"
+
 	tab transmit
 		to: #conditions;
 		andShow: [ :a :col | 
@@ -9,7 +17,7 @@ buildConditionsIn: tab
 				act: [ :presentation | 
 					| newCond |
 					newCond := CollectEvaluation new.
-					col configuration conditions add: newCond.
+					col configuration conditions add: (newCond name: (UIManager default request: 'Evaluation Name')).
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
@@ -29,11 +37,13 @@ buildConditionsIn: tab
 			a pharoScript
 				title: 'Edit condition';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reifications collect: [ :reif | reif -> reif ] ];
+				variableBindings: [ reificationsHandler reifications collect: [ :reif | reif -> reif ] ];
+				updateOn: SelectedReificationsHaveChanged from: [ announcer ];
 				display: cond source;
 				selectionAct: [ :thePane | 
 					| src |
 					src := (thePane pane port: #text) value.
-					cond source: src ]
+					cond source: src.
+					a update ]
 					on: $s
 					entitled: 'Accept' ]

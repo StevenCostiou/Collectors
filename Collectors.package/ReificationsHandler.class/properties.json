@@ -1,15 +1,14 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "Collectors-Model",
+	"category" : "Collectors-Browser",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"source",
-		"block",
-		"name"
+		"browser",
+		"reifications"
 	],
-	"name" : "CollectEvaluation",
+	"name" : "ReificationsHandler",
 	"type" : "normal"
 }
