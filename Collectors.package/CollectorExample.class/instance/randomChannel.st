@@ -1,3 +1,3 @@
 as yet unclassified
 randomChannel
-	^ 10 atRandom
+	^ 5 atRandom
