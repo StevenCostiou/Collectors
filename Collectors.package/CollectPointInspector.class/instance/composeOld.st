@@ -1,21 +1,26 @@
 building
-compose
+composeOld
 	| tab itemsByTime stack |
 	tab := self tabulator.
 	itemsByTime := Dictionary new.
 	stack := Dictionary new.
-	(collector omniscientCollectedItems select: [ :item | item node == node ]) do: [ :item | itemsByTime at: item timestamp put: item ].
+	(collector omniscientCollectedItems select: [ :item | item node == node ])
+		do: [ :item | itemsByTime at: item timestamp put: item ].
 	tab title: node printString , ' history'.
 	tab
 		with: [ :browser | 
 			browser
 				row: [ :r | 
 					r
-						column: #time span: 2;
-						column: #itemSource span: 3 ]
-				span: 4.
-			browser row: #itemStack span: 4.
-			browser row: #actions span: 1.
+						column: #time span: 1;
+						column: #itemStack span: 3;
+						column: #itemSource span: 3 ].
+			browser
+				row: [ :r | 
+					r
+						column: #contextStack;
+						column: #contextSource ].
+			browser row: #contextInspector.
 
 			"Display the collection times"
 			browser transmit
@@ -39,13 +44,13 @@ compose
 							i := i + 1 ].
 					stack at: i put: item.
 					a title: 'Collected sub-expressions'.
-					"a
+					a
 						act: [ :s | 
 							[ collector replayCollectedItem: (stack at: s selection) ]
 								on: Error
 								do: [ :err | err inspect ] ]
 						icon: (self iconNamed: #smallUpdate)
-						entitled: 'Use as replay'."
+						entitled: 'Use as replay'.
 					a fastTable
 						tagsStyle: #greenRoundedButton;
 						display: stack keys;
@@ -60,9 +65,9 @@ compose
 								(stack at: each) oldValue = (stack at: each) newValue
 									ifFalse: [ 'value change' ]
 									ifTrue: [ #() ] ];
-						column: 'Old Value' evaluated: [ :each | (stack at: each) oldValue ] width: 130;
-						column: 'New Value' evaluated: [ :each | (stack at: each) newValue ] width: 130;
-						column: 'Value' evaluated: [ :each | (stack at: each) collectedObject ] width: 130 ].
+						column: 'Old Value' evaluated: [ :each | (stack at: each) oldValue ] width: 70;
+						column: 'New Value' evaluated: [ :each | (stack at: each) newValue ] width: 70;
+						column: 'Value' evaluated: [ :each | (stack at: each) collectedObject ] width: 70 ].
 
 			"Transmit the selected item node the visualization"
 			browser transmit
@@ -85,9 +90,36 @@ compose
 							self buildStackedItemSegmentFor: item node.
 							self nodeVisu: item node in: a ] ].
 
-
-			"Actions on selected stack item"
+			"Context stack"
 			browser transmit
-				from: #itemStack;
-				to: #actions;
-				andShow: [ :composite :stackItemIndex | stack at: stackItemIndex ifPresent: [ :item | self composeActionButtonsFor: item in: composite ] ] ]
+				from: #time;
+				to: #contextStack;
+				andShow: [ :a :timestamp | 
+					| item |
+					item := itemsByTime at: timestamp.
+					a title: 'Context Stack'.
+					a fastList display: item context ].
+
+			"Context stack method"
+			browser transmit
+				from: #contextStack;
+				to: #contextSource;
+				andShow: [ :a :context | 
+					a title: 'Context Source'.
+					context
+						ifNotNil: [ a pharoMethod
+								smalltalkClass: [ context contextClass ];
+								display: context sourceCode ] ].
+
+			"Context inspector"
+			browser transmit
+				from: #contextStack;
+				to: #contextInspector;
+				andShow: [ :a :context | 
+					context
+						ifNotNil: [ a dynamic
+								display: [ :x | 
+									(GLMCompositePresentation new
+										with: [ :aComposite | 
+											context gtCollectorRawIn: aComposite showSelf: true.
+											aComposite ]) startOn: x ] ] ] ]
