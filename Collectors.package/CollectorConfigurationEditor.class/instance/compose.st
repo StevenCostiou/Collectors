@@ -1,8 +1,8 @@
-building - configuration
-buildConfigurationPageIn: aPresentation
+building
+compose
 	| tab |
-	tab := aPresentation tabulator.
-	tab title: 'Configuration of : ' , selectedCollector printString.
+	tab := self tabulator.
+	tab title: 'Configuration'.
 	tab
 		with: [ :browser | 
 			browser
@@ -20,9 +20,9 @@ buildConfigurationPageIn: aPresentation
 						column: #selectedTransformation ] ].
 	tab transmit
 		to: #collectorDefinition;
-		andShow: [ :a :col | col buildInComposite: a ].
+		andShow: [ :a | collector buildInComposite: a ].
 	tab transmit
 		to: #reifications;
-		andShow: [ :presentation :col | self buildReificationsCheckBoxesIn: presentation for: col ].
+		andShow: [ :presentation :col | self buildReificationsCheckBoxesIn: presentation ].
 	self buildConditionsIn: tab.
-	self buildTransformatiosIn: tab.
+	self buildTransformatiosIn: tab

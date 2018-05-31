@@ -1,25 +1,25 @@
-building - configuration
+building
 buildTransformatiosIn: tab
 	tab transmit
 		to: #transformations;
-		andShow: [ :a :col | 
+		andShow: [ :a | 
 			a fastList
 				title: 'Transformations';
-				display: col configuration transformations;
+				display: collector configuration transformations;
 				act: [ :presentation | 
 					| newTransfo |
 					newTransfo := CollectEvaluation new.
-					col configuration transformations add: newTransfo.
+					collector configuration transformations add: newTransfo.
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					col configuration transformations remove: presentation selection.
+					collector configuration transformations remove: presentation selection.
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
-					col configuration transformations remove: presentation selection.
+					collector configuration transformations remove: presentation selection.
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit

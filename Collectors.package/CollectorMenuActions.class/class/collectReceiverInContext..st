@@ -1,6 +1,6 @@
 actions
 collectReceiverInContext: aClySugsMethodContext
-	| nodes node |
+	| nodes node collector|
 	"remote ifNotNil: [ ^ remote collectReceiverInContext: aClySugsMethodContext forScope: aScope]."
 	nodes := SugsMenuBuilder findBestNodeIntervalFor: aClySugsMethodContext.
 	nodes first == nodes last
@@ -8,4 +8,8 @@ collectReceiverInContext: aClySugsMethodContext
 	node := nodes first.
 	node isMessage
 		ifFalse: [ ^ self inform: 'Selection does not refer to a message' ].
-	Collector collectReceiver: node
+	collector := Collector collectReceiver: node.
+	CollectorConfigurationEditor new
+		title: 'Configuration';
+		collector: collector;
+		openOn: #()
