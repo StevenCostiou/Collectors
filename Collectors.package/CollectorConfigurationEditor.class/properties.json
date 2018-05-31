@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "GLMCompositePresentation",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collector",
+		"reificationsHandler",
+		"allReifications",
+		"announcer"
+	],
+	"name" : "CollectorConfigurationEditor",
+	"type" : "normal"
+}

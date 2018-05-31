@@ -1,4 +1,4 @@
-building - configuration
+building
 buildConditionsIn: tab
 	"withGhostText: 'Write condition';
 		act: [ :thePane | 
@@ -10,24 +10,24 @@ buildConditionsIn: tab
 
 	tab transmit
 		to: #conditions;
-		andShow: [ :a :col | 
+		andShow: [ :a | 
 			a fastList
 				title: 'Conditions';
-				display: col configuration conditions;
+				display: collector configuration conditions;
 				act: [ :presentation | 
 					| newCond |
 					newCond := CollectEvaluation new.
-					col configuration conditions add: (newCond name: (UIManager default request: 'Evaluation Name')).
+					collector configuration conditions add: (newCond name: (UIManager default request: 'Evaluation Name')).
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					col configuration conditions remove: presentation selection.
+					collector configuration conditions remove: presentation selection.
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
-					col configuration conditions remove: presentation selection.
+					collector configuration conditions remove: presentation selection.
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit

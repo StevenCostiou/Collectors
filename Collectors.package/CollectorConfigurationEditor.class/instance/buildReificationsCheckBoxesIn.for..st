@@ -1,4 +1,4 @@
-building - configuration
+building
 buildReificationsCheckBoxesIn: presentation for: aCollector
 	| reifPresentation |
 	reifPresentation := presentation tabulator.
