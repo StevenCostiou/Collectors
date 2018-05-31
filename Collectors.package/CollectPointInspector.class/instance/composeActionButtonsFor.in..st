@@ -29,4 +29,12 @@ composeActionButtonsFor: item in: composite
 		model: [ collector replayCollectedItem: item ]
 		color: Color yellow
 		icon: (self iconNamed: #smallUpdate)
-		in: buttons
+		in: buttons.
+		
+		self
+		buildButtonNamed: #inspectContextStack
+		label: 'Inspect context stack'
+		model: [  item context inspect]
+		color: Color green muchLighter
+		icon: (self iconNamed: #smallInspectIt)
+		in: buttons.
