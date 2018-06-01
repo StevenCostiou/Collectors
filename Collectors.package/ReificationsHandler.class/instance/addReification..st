@@ -1,4 +1,5 @@
 adding - removing
 addReification: aReification
 	reifications add: aReification.
-	browser announcer announce: SelectedReificationsHaveChanged
+	browser recomputeBindings	"With: aReification."
+	"browser announcer announce: SelectedReificationsHaveChanged"

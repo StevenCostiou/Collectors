@@ -1,3 +1,3 @@
-behavior - api
+installing
 reinstall
 	self reinstallWith: configuration

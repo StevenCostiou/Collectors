@@ -1,33 +1,31 @@
 building - configuration
 buildConditionsIn: tab
-	"withGhostText: 'Write condition';
-		act: [ :thePane | 
-			| src |
-			src := (thePane pane port: #text) value.
-			cond source: src.
-			a update ]
-		on: $s;"
-
 	tab transmit
 		to: #conditions;
-		andShow: [ :a :col | 
+		andShow: [ :a | 
 			a fastList
 				title: 'Conditions';
-				display: col configuration conditions;
+				display: selectedCollector configuration conditions;
+				updateOn: SelectedReificationsHaveChanged from: [ announcer weak ];
 				act: [ :presentation | 
 					| newCond |
 					newCond := CollectEvaluation new.
-					col configuration conditions add: (newCond name: (UIManager default request: 'Evaluation Name')).
+					selectedCollector configuration conditions
+						add:
+							(newCond
+								name:
+									((UIManager default request: 'Condition Name' initialAnswer: 'a Condition')
+										ifNil: [ 'a Condition' ])).
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					col configuration conditions remove: presentation selection.
+					selectedCollector configuration conditions remove: presentation selection.
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
-					col configuration conditions remove: presentation selection.
+					selectedCollector configuration conditions remove: presentation selection.
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit
@@ -37,13 +35,13 @@ buildConditionsIn: tab
 			a pharoScript
 				title: 'Edit condition';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reificationsHandler reifications collect: [ :reif | reif -> reif ] ];
-				updateOn: SelectedReificationsHaveChanged from: [ announcer ];
-				display: cond source;
+				variableBindings: [ reificationsBindings ];
+				display: (cond source ifNil: [ '' ]);
 				selectionAct: [ :thePane | 
 					| src |
 					src := (thePane pane port: #text) value.
 					cond source: src.
+					thePane clearUserEdits.
 					a update ]
 					on: $s
 					entitled: 'Accept' ]

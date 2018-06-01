@@ -1,0 +1,4 @@
+building - configuration
+reinstallCollector
+	selectedCollector configuration reifications: reificationsHandler reifications.
+	selectedCollector reinstall

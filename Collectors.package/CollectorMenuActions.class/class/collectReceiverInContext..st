@@ -9,7 +9,4 @@ collectReceiverInContext: aClySugsMethodContext
 	node isMessage
 		ifFalse: [ ^ self inform: 'Selection does not refer to a message' ].
 	collector := Collector collectReceiver: node.
-	CollectorConfigurationEditor new
-		title: 'Configuration';
-		collector: collector;
-		openOn: #()
+	CollectorConfigurationEditor newForCollector: collector

@@ -1,25 +1,29 @@
 building - configuration
-buildTransformatiosIn: tab
+buildTransformationsIn: tab
 	tab transmit
 		to: #transformations;
-		andShow: [ :a :col | 
+		andShow: [ :a | 
 			a fastList
 				title: 'Transformations';
-				display: col configuration transformations;
+				display: selectedCollector configuration transformations;
+				updateOn: SelectedReificationsHaveChanged from: [ announcer weak ];
 				act: [ :presentation | 
 					| newTransfo |
 					newTransfo := CollectEvaluation new.
-					col configuration transformations add: newTransfo.
+					selectedCollector configuration transformations
+						add:
+							(newTransfo
+								name: ((UIManager default request: 'Transformation Name' initialAnswer: 'a Transformation') ifNil: [ 'a Condition' ])).
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					col configuration transformations remove: presentation selection.
+					selectedCollector configuration transformations remove: presentation selection.
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
-					col configuration transformations remove: presentation selection.
+					selectedCollector configuration transformations remove: presentation selection.
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit
@@ -29,11 +33,13 @@ buildTransformatiosIn: tab
 			a pharoScript
 				title: 'Edit transformation';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reificationsHandler reifications collect: [ :reif | reif -> reif ] ];
-				display: transfo source;
+				variableBindings: [ reificationsBindings ];
+				display: (transfo source ifNil: [ '' ]);
 				selectionAct: [ :thePane | 
 					| src |
 					src := (thePane pane port: #text) value.
-					transfo source: src ]
+					transfo source: src.
+					thePane clearUserEdits.
+					a update ]
 					on: $s
 					entitled: 'Accept' ]

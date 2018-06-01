@@ -1,4 +1,4 @@
-building
+building - configuration
 buildReificationsCheckBoxesIn: presentation
 	| reifPresentation |
 	reifPresentation := presentation tabulator.
@@ -35,6 +35,6 @@ buildReificationsCheckBoxesIn: presentation
 							model := ReificationCheckBoxModel on: reificationsHandler forReification: reif.
 							checkbox on: model selected: #state changeSelected: #state:.
 							checkbox label: reif.
-							(collector installer availableReifications includes: reif)
+							(selectedCollector installer availableReifications includes: reif)
 								ifFalse: [ checkbox disable ].
-							checkbox ]]]
+							checkbox ] ] ]

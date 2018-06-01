@@ -12,7 +12,8 @@
 		"stackedItemSegment",
 		"allReifications",
 		"reificationsHandler",
-		"announcer"
+		"announcer",
+		"reificationsBindings"
 	],
 	"name" : "CollectorsBrowser",
 	"type" : "normal"

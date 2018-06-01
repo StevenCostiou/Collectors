@@ -10,7 +10,4 @@ collectResultInContext: aClySugsMethodContext
 				ifTrue: [ nodes first parent ]
 				ifFalse: [ ^ self inform: 'Unable to find the object: selection may be too large' ] ].
 	collector := Collector collectValue: node.
-	CollectorConfigurationEditor new
-		title: 'Configuration';
-		collector: collector;
-		openOn: #()
+	CollectorConfigurationEditor newForCollector: collector

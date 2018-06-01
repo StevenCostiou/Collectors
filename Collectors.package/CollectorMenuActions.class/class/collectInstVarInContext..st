@@ -9,7 +9,4 @@ collectInstVarInContext: aClySugsMethodContext
 	(node isVariable and: [ node isTemp not ])
 		ifFalse: [ ^ self inform: 'Selection does not refer to an instance variable' ].
 	collector := Collector collectInstVarNamed: node name inClass: node methodNode methodClass.
-	CollectorConfigurationEditor new
-		title: 'Configuration';
-		collector: collector;
-		openOn: #()
+	CollectorConfigurationEditor newForCollector: collector

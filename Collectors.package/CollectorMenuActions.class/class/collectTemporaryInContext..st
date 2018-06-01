@@ -9,7 +9,4 @@ collectTemporaryInContext: aClySugsMethodContext
 	(node isVariable and: [ node isTemp ])
 		ifFalse: [ ^ self inform: 'Selection does not refer to a temporary variable' ].
 	collector := Collector collectTempVarNamed: node name inMethodNamed: node methodNode selector inClass: node methodNode methodClass.
-	CollectorConfigurationEditor new
-		title: 'Configuration';
-		collector: collector;
-		openOn: #()
+	CollectorConfigurationEditor newForCollector: collector
