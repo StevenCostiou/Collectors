@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "stevenCostiou 6/2/2018 14:37",
+	"super" : "Object",
+	"category" : "Collectors-SensorMonitoringAppExample",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"running",
+		"sensors",
+		"process"
+	],
+	"name" : "CLSensorMonitoringApp",
+	"type" : "normal"
+}
