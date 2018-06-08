@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"channel"
+		"channel",
+		"name"
 	],
 	"name" : "CLGenericSensor",
 	"type" : "normal"

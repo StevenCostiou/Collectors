@@ -7,4 +7,5 @@ initialize
 	sensors add: CLTemperatureSensor new.
 	sensors add: CLSoundSensor new.
 	sensors add: CLProximitySensor new.
+	errors := OrderedCollection new.
 	^ self

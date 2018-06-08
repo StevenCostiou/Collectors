@@ -1,3 +1,3 @@
 initialization
 readLightLevel
-	^ ((self read asNumber / 1023) asFloat * 100) rounded
+	^ -1 * (500 / self resistance * 100) asFloat

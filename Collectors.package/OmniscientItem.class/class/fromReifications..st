@@ -12,7 +12,7 @@ fromReifications: reificationsDictionary
 	reificationsDictionary at: #node ifPresent: [ :e | item node: e ].
 	reificationsDictionary at: #selector ifPresent: [ :e | item selector: e ].
 	reificationsDictionary at: #sender ifPresent: [ :e | item sender: e ].
-	reificationsDictionary at: #context ifPresent: [ :e | item context: (e stackOfSize: 10) copy .].
+	reificationsDictionary at: #context ifPresent: [ :e | item copyContext: e ].
 	reificationsDictionary at: #variable ifPresent: [ :e | item variable: e ].
 	reificationsDictionary at: #value ifPresent: [ :e | item collectedObject: e ].
 	reificationsDictionary at: #object ifPresent: [ :e | item sourceObject: e ].

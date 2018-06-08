@@ -4,4 +4,4 @@ printNextReadOn: aStream
 	aStream nextPutAll: 'Light level:'.
 	aStream space.
 	aStream nextPutAll: self readLightLevel printString.
-	aStream nextPut: $%
+	aStream nextPutAll: '%'

@@ -1,10 +1,11 @@
 printing
 printNextReadOn: aStream
-	aStream cr.
-	aStream nextPutAll: 'Temperature:'.
-	aStream space.
-	([ self readTemperature ]
-		on: Error
-		do: [ :err | err ]) printOn: aStream.
-	aStream space.
-	aStream nextPutAll: '¬∞C'
+	| s |
+	s := WriteStream on: String new.
+	s cr.
+	s nextPutAll: 'Temperature:'.
+	s space.
+	s nextPutAll: self readTemperature printString.
+	s space.
+	s nextPutAll: 'Celsius'.
+	aStream nextPutAll: s contents

@@ -6,7 +6,17 @@ start
 	process := [ [ running ]
 		whileTrue: [ | stream |
 			stream := WriteStream on: String new.
-			sensors do: [ :sensor | sensor printNextReadOn: stream ].
+			errors
+				do: [ :err | 
+					stream nextPutAll: err.
+					stream cr ].
+			stream nextPutAll: '##########################################'.
+			stream cr.
+			sensors
+				do: [ :sensor | 
+					[ sensor printNextReadOn: stream ]
+						on: Error
+						do: [ :err | self logError: sensor -> err ] ].
 			Transcript clear.
 			Transcript crShow: stream contents.
 			delay wait ] ] fork
