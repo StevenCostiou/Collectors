@@ -1,0 +1,11 @@
+read/write
+read: chan
+	chan = 4
+		ifTrue: [ ^ (650 to: 655) atRandom ].
+	chan = 1
+		ifTrue: [ ^ (200 to: 250) atRandom ].
+	chan = 2
+		ifTrue: [ 200 atRandom < 2
+				ifTrue: [ ^ 'nan' ].
+			^ (775 to: 10323) atRandom ].
+	^ (0 to: 1023) atRandom
