@@ -1,4 +1,4 @@
-building - visualization
+building - visualization - deprecated
 buildVisualizationPageFor: aCollector in: aPresentation
 	| tab |
 	tab := aPresentation tabulator.

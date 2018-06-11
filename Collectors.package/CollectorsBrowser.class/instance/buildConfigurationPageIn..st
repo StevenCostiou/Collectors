@@ -2,6 +2,7 @@ building - configuration
 buildConfigurationPageIn: aPresentation
 	| tab |
 	tab := aPresentation tabulator.
+	tab act: [ self update ] icon: GLMUIThemeExtraIcons glamorousRefresh entitled: 'Refresh' .
 	tab title: 'Configuration of : ' , selectedCollector printDefinition.
 	tab
 		with: [ :browser | 
