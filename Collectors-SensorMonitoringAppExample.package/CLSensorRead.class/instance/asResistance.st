@@ -4,4 +4,6 @@ asResistance
 	v := self computeOutputVoltageFrom: rawValue.
 	self computeResistanceFrom: v ]
 		on: Error
-		do: [:err|  self log: err. 0 ]
+		do: [ :err | 
+			self log: err.
+			0 ]
