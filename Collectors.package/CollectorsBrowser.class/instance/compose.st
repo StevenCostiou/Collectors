@@ -8,5 +8,5 @@ compose
 	pager
 		show: [ :a :col | 
 			self selectedCollector: col.
-			self buildVisualizationPageFor: col in: a.
+			self buildCollectPointsVisualizationIn: a.
 			self buildConfigurationPageIn: a ]
