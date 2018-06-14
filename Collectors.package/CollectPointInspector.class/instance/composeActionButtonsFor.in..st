@@ -6,9 +6,10 @@ composeActionButtonsFor: item in: composite
 		buildButtonNamed: #inspectObject
 		label: 'Inspect Collected Object'
 		model: [ item collectedObject inspect ]
-		color: Color gray muchLighter
+		color: Smalltalk ui theme windowColor
 		icon: (self iconNamed: #smallInspectIt)
 		in: buttons.
+		"
 	self
 		buildButtonNamed: #inspectOldValue
 		label: 'Inspect old value'
@@ -22,19 +23,19 @@ composeActionButtonsFor: item in: composite
 		model: [ item newValue inspect ]
 		color: Color gray muchLighter
 		icon: (self iconNamed: #smallInspectIt)
-		in: buttons.
+		in: buttons."
 	self
 		buildButtonNamed: #useAsReplay
-		label: 'Use as replay'
+		label: 'Use result as replay'
 		model: [ collector replayCollectedItem: item ]
-		color: Color yellow
+		color: Smalltalk ui theme windowColor
 		icon: (self iconNamed: #smallUpdate)
 		in: buttons.
-		
+	"	
 		self
 		buildButtonNamed: #inspectContextStack
 		label: 'Inspect context stack'
 		model: [  item context inspect]
 		color: Color green muchLighter
 		icon: (self iconNamed: #smallInspectIt)
-		in: buttons.
+		in: buttons."

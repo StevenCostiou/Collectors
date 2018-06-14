@@ -23,7 +23,8 @@
 		"sourceObjectClass",
 		"transformations",
 		"backInTimeItems",
-		"timestamp"
+		"timestamp",
+		"objectReification"
 	],
 	"name" : "OmniscientItem",
 	"type" : "normal"

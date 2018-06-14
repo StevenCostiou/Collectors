@@ -1,3 +1,3 @@
 *Collectors
 gtCollectorRawIn: composite
-	(CollectorItemVariablesBrowser new variablesIn: composite) send: #value
+	(GTObjectVariablesBrowser new variablesIn: composite) send: #value

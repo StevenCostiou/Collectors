@@ -1,76 +1,66 @@
 building
 compose
-	| tab itemsByTime stack |
-	tab := self tabulator.
-	itemsByTime := Dictionary new.
-	stack := Dictionary new.
-	(collector omniscientCollectedItems select: [ :item | item node == node ]) do: [ :item | itemsByTime at: item timestamp put: item ].
-	tab title: node printString , ' history'.
-	tab
+	self tabulator
 		with: [ :browser | 
 			browser
 				row: [ :r | 
 					r
 						column: #time span: 2;
-						column: #itemSource span: 3 ]
+						column: #itemStack span: 3;
+						column: #itemSource span: 7 ]
 				span: 4.
-			browser row: #itemStack span: 4.
-			browser row: #actions span: 1.
+			browser
+				row: [ :r | 
+					r column: #objectInspector.
+					r column: #contextStack.
+					r column: #context ]
+				span: 4.
 
 			"Display the collection times"
 			browser transmit
 				to: #time;
 				andShow: [ :a | 
 					a title: 'Collection time'.
-					a fastList display: itemsByTime keys asSortedCollection ].
+					a fastList
+						display: collector omniscientCollectedItems asSortedCollection;
+						format: [ :each | each timestamp ];
+						tagsStyle: #greenRoundedButton;
+						tags: [ :each | 
+							(collector hasIdentityChangesFor: each in: collector omniscientCollectedItems)
+								ifTrue: [ 'value change' ]
+								ifFalse: [ #() ] ] ].
 
 			"Inspect the selected item"
 			browser transmit
 				from: #time;
 				to: #itemStack;
-				andShow: [ :a :timestamp | 
-					| item i |
-					item := itemsByTime at: timestamp.
-					stack := Dictionary new.
-					i := 1.
-					item backInTimeItems
-						do: [ :bitItem | 
-							stack at: i put: bitItem.
-							i := i + 1 ].
-					stack at: i put: item.
+				andShow: [ :a :item | 
+					| stack |
+					stack := item backInTimeItems copy.
+					stack add: item.
 					a title: 'Collected sub-expressions'.
-					"a
-						act: [ :s | 
-							[ collector replayCollectedItem: (stack at: s selection) ]
-								on: Error
-								do: [ :err | err inspect ] ]
-						icon: (self iconNamed: #smallUpdate)
-						entitled: 'Use as replay'."
 					a fastTable
 						tagsStyle: #greenRoundedButton;
-						display: stack keys;
-						column: ' ' evaluated: [ :each | each ] width: 10;
+						display: stack;
+						column: ' ' evaluated: [ :each | stack identityIndexOf: each ] width: 15;
 						column: 'Expression Stack'
 							evaluated: [ :each | 
-							| subNode stackItem |
-							stackItem := stack at: each.
-							subNode := stackItem node.
-							subNode source copyFrom: subNode start to: subNode stop ]
+							| subNode |
+							subNode := each node.
+							self
+								buildSubExpressionMorphFor: (subNode source copyFrom: subNode start to: subNode stop)
+								changeDetected: (collector hasValueChangesFor: each in: item backInTimeItems) ]
 							tags: [ :each | 
-								(stack at: each) oldValue = (stack at: each) newValue
-									ifFalse: [ 'value change' ]
-									ifTrue: [ #() ] ];
-						column: 'Old Value' evaluated: [ :each | (stack at: each) oldValue ] width: 130;
-						column: 'New Value' evaluated: [ :each | (stack at: each) newValue ] width: 130;
-						column: 'Value' evaluated: [ :each | (stack at: each) collectedObject ] width: 130 ].
+								(collector hasValueChangesFor: each in: item backInTimeItems)
+									ifFalse: [ #() ]
+									ifTrue: [ 'value change' ] ] ].
 
 			"Transmit the selected item node the visualization"
 			browser transmit
 				from: #time;
 				to: #itemSource;
-				andShow: [ :a :timestamp | 
-					| item |
-					item := itemsByTime at: timestamp.
+				when: [ :item | item notNil ];
+				andShow: [ :a :item | 
 					self buildItemSegmentFor: item node.
 					self nodeVisu: item node in: a ].
 
@@ -78,16 +68,35 @@ compose
 			browser transmit
 				from: #itemStack;
 				to: #itemSource;
-				andShow: [ :a :i | 
-					stack
-						at: i
-						ifPresent: [ :item | 
-							self buildStackedItemSegmentFor: item node.
-							self nodeVisu: item node in: a ] ].
-
-
-			"Actions on selected stack item"
+				when: [ :subitem | subitem notNil ];
+				andShow: [ :a :subitem | 
+					self buildStackedItemSegmentFor: subitem node.
+					self nodeVisu: subitem node in: a ].
 			browser transmit
 				from: #itemStack;
+				to: #objectInspector;
+				when: [ :item | item notNil ];
+				andShow: [ :a :item | self buildOmniscientItemInspectorIn: a for: item ].
+			browser transmit
+				from: #time;
+				to: #contextStack;
+				when: [ :item | item notNil ];
+				andShow: [ :a :item | 
+					a fastList
+						title: 'Stack';
+						display: item context ].
+			browser transmit
+				from: #contextStack;
+				to: #context;
+				when: [ :ctx | ctx notNil ];
+				andShow: [ :a :ctx | 
+					"Actions on selected stack item"
+					"browser transmit
+				from: #itemStack;
 				to: #actions;
-				andShow: [ :composite :stackItemIndex | stack at: stackItemIndex ifPresent: [ :item | self composeActionButtonsFor: item in: composite ] ] ]
+				when: [ :subitem | subitem notNil ];
+				andShow: [ :composite :subitem | self composeActionButtonsFor: subitem in: composite ]"
+					a pharoMethod
+						title: 'Source';
+						smalltalkClass: [ ctx method methodClass ];
+						display: ctx method ] ]
