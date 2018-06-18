@@ -1,7 +1,9 @@
 building
 buildOmniscientItemInspectorIn: presentation for: item
 	| object |
-	object := item collectedObject.
+	object := item node isVariable
+		ifTrue: [ item oldValue ]
+		ifFalse: [ item collectedObject ifNil: [ item sourceObject ifNil: [ item newValue ] ] ].
 	presentation tabulator
 		title: object printString;
 		with: [ :browser | 

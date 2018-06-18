@@ -10,4 +10,4 @@ testCollectedItemsHaveReifications
 	AnObjectWithInstVar new instVar: 'titi'.
 	self assert: col omniscientCollectedItems first name equals: #instVar.
 	self assert: col omniscientCollectedItems second collectedObject equals: 'tata'.
-	self assert: (col omniscientCollectedItems third sourceObject isKindOf: AnObjectWithInstVar)
+	self assert: (col omniscientCollectedItems third objectReification isKindOf: AnObjectWithInstVar)
