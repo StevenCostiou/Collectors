@@ -1,4 +1,4 @@
-building - configuration
+building - configuration - deprecated
 buildReificationsCheckBoxesIn: presentation
 	| reifPresentation |
 	reifPresentation := presentation tabulator.

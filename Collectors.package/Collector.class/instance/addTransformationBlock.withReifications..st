@@ -4,4 +4,4 @@ addTransformationBlock: aTransformationBlock withReifications: anArrayOfReificat
 	transformation := CollectEvaluation new.
 	transformation source: aTransformationBlock sourceNode body formattedCode.
 	configuration transformations add: transformation.
-	self addReifications: anArrayOfReifications
+	configuration addReifications: anArrayOfReifications

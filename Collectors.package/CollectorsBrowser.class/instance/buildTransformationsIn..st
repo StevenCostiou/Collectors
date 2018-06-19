@@ -6,7 +6,7 @@ buildTransformationsIn: tab
 			a fastList
 				title: 'Transformations';
 				display: selectedCollector configuration transformations;
-				updateOn: SelectedReificationsHaveChanged from: [ announcer weak ];
+				updateOn: SelectedReificationsHaveChanged from: [ collectorAnnouncer weak ];
 				act: [ :presentation | 
 					| newTransfo |
 					newTransfo := CollectEvaluation new.
@@ -30,10 +30,12 @@ buildTransformationsIn: tab
 		to: #selectedTransformation;
 		from: #transformations;
 		andShow: [ :a :transfo | 
-			a pharoScript
-				title: 'Edit transformation';
+			| script |
+			script := a pharoScript.
+			script
+				title: 'Edit condition';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reificationsBindings ];
+				variableBindings: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ];
 				display: (transfo source ifNil: [ '' ]);
 				selectionAct: [ :thePane | 
 					| src |
@@ -42,4 +44,11 @@ buildTransformationsIn: tab
 					thePane clearUserEdits.
 					a update ]
 					on: $s
-					entitled: 'Accept' ]
+					entitled: 'Accept'.
+			collectorAnnouncer
+				when: SelectedReificationsHaveChanged
+				do: [ script
+						resetBindings;
+						variableBindings: [ :bindings | bindings addAll: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ] ].
+					script update ] ]
+		

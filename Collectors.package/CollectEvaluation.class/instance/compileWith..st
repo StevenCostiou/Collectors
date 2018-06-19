@@ -13,6 +13,6 @@ compileWith: bindings
 			stream nextPutAll: binding asString.
 			stream space ].
 	stream nextPut: $|.
-	stream nextPutAll: source.
+	stream nextPutAll: self source.
 	stream nextPut: $].
 	self block: (Smalltalk compiler evaluate: stream contents)

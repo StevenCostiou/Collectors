@@ -1,4 +1,4 @@
-building - visualization - deprecated
+building - visualization - old
 nodeVisu: node in: a
 	| pharoMethod |
 	a title: (node methodNode methodClass name , ' >>') asString.

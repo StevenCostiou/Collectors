@@ -6,21 +6,16 @@ buildConditionsIn: tab
 			a fastList
 				title: 'Conditions';
 				display: selectedCollector configuration conditions;
-				updateOn: SelectedReificationsHaveChanged from: [ announcer weak ];
 				act: [ :presentation | 
 					| newCond |
 					newCond := CollectEvaluation new.
 					selectedCollector configuration conditions
-						add:
-							(newCond
-								name:
-									((UIManager default request: 'Condition Name' initialAnswer: 'a Condition')
-										ifNil: [ 'a Condition' ])).
+						add: (newCond name: ((UIManager default request: 'Condition Name' initialAnswer: 'a Condition') ifNil: [ 'a Condition' ])).
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					selectedCollector configuration conditions remove: presentation selection.
+					selectedCollector configuration conditions remove: presentation selection ifAbsent: [  ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
@@ -29,13 +24,15 @@ buildConditionsIn: tab
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit
-		to: #selectedCondition;
 		from: #conditions;
+		to: #selectedCondition;
 		andShow: [ :a :cond | 
-			a pharoScript
+			| script |
+			script := a pharoScript.
+			script
 				title: 'Edit condition';
 				smalltalkClass: [ Object ];
-				variableBindings: [ reificationsBindings ];
+				variableBindings: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ];
 				display: (cond source ifNil: [ '' ]);
 				selectionAct: [ :thePane | 
 					| src |
@@ -44,4 +41,10 @@ buildConditionsIn: tab
 					thePane clearUserEdits.
 					a update ]
 					on: $s
-					entitled: 'Accept' ]
+					entitled: 'Accept'.
+			collectorAnnouncer
+				when: SelectedReificationsHaveChanged
+				do: [ script
+						resetBindings;
+						variableBindings: [ :bindings | bindings addAll: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ] ].
+					script update ] ]

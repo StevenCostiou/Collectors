@@ -1,3 +1,3 @@
 accessing
 collectorAnnouncer
-	^ announcer
+	^ collectorAnnouncer

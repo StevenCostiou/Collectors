@@ -3,7 +3,7 @@ buildCollectPointsVisualizationIn: aPresentation
 	| tab |
 	tab := aPresentation tabulator.
 	tab title: 'Collect points of : ' , selectedCollector printDefinition.
-	tab act: [ self update ] icon: GLMUIThemeExtraIcons glamorousRefresh entitled: 'Refresh' .
+	tab act: [ self update ] icon: GLMUIThemeExtraIcons glamorousRefresh entitled: 'Refresh'.
 	tab
 		with: [ :browser | 
 			browser
@@ -17,3 +17,4 @@ buildCollectPointsVisualizationIn: aPresentation
 			browser row: #actions span: 1 ].
 	self buildNodesVsualizationIn: tab.
 	self buildItemStackIn: tab.
+	self buildEmptyStackin: tab

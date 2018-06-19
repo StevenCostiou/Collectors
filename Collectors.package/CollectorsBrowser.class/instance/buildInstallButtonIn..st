@@ -1,4 +1,4 @@
-building - configuration
+building - configuration - deprecated
 buildInstallButtonIn: tab
 	tab transmit
 		to: #installButton;

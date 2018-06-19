@@ -1,3 +1,4 @@
 compiling
 compileConditionsWith: reificationsNames
-	conditions do: [:cond | cond compileWith: reificationsNames]
+	conditions ifEmpty: [ ^ self ].
+	conditions do: [ :cond | cond compileWith: reificationsNames ]

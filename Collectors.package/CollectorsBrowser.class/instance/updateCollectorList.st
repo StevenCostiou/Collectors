@@ -1,3 +1,5 @@
 updating
 updateCollectorList
-	collectors := Collector allInstances
+	collectors ifNotNil: [ collectors removeAll ].
+	collectors ifNil: [ collectors := OrderedCollection new ].
+	collectors addAll: Collector allInstances

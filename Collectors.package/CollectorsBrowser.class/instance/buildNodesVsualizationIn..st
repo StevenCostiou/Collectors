@@ -15,10 +15,6 @@ buildNodesVsualizationIn: tab
 			a title: 'Collection time'.
 			a fastList
 				display: itemsByTime;
-				format: [ :item | item timestamp ] ].
-	tab transmit
-		from: #itemNodes;
-		to: #itemSource;
-		andShow: [ :a :collectionPoint | 
-			self buildItemSegmentFor: collectionPoint.
-			self nodeVisu: collectionPoint in: a ]
+				format: [ :item | item timestamp ].
+			a shouldValidate: true ].
+	self buildSourceIn: tab
