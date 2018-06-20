@@ -33,7 +33,7 @@ buildTransformationsIn: tab
 			| script |
 			script := a pharoScript.
 			script
-				title: 'Edit condition';
+				title: 'Edit transformation';
 				smalltalkClass: [ Object ];
 				variableBindings: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ];
 				display: (transfo source ifNil: [ '' ]);
@@ -42,7 +42,7 @@ buildTransformationsIn: tab
 					src := (thePane pane port: #text) value.
 					transfo source: src.
 					thePane clearUserEdits.
-					selectedCollector reinstall.
+					selectedCollector configuration compileTransformationsWith: selectedCollector installer reifications.
 					a update ]
 					on: $s
 					entitled: 'Accept'.
@@ -52,4 +52,3 @@ buildTransformationsIn: tab
 						resetBindings;
 						variableBindings: [ :bindings | bindings addAll: [ selectedCollector installer reifications collect: [ :reif | reif -> reif ] ] ].
 					script update ] ]
-		

@@ -39,7 +39,7 @@ buildConditionsIn: tab
 					src := (thePane pane port: #text) value.
 					cond source: src.
 					thePane clearUserEdits.
-					selectedCollector reinstall.
+					selectedCollector configuration compileConditionsWith: selectedCollector installer reifications.
 					a update ]
 					on: $s
 					entitled: 'Accept'.
