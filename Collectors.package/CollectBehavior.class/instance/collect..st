@@ -1,10 +1,10 @@
 collecting
 collect: anArrayOfReifications
 	| collector object |
-	collector := anArrayOfReifications first.	
+	collector := anArrayOfReifications first.
 	object := anArrayOfReifications second.
-	
-	collector isInReplayMode ifTrue:[^self].
+	collector isInReplayMode
+		ifTrue: [ ^ self ].
 	(collector mustCollect: anArrayOfReifications)
 		ifFalse: [ collector trashDeepCollectedItems.
 			^ self ].

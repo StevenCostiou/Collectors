@@ -42,6 +42,7 @@ buildTransformationsIn: tab
 					src := (thePane pane port: #text) value.
 					transfo source: src.
 					thePane clearUserEdits.
+					selectedCollector reinstall.
 					a update ]
 					on: $s
 					entitled: 'Accept'.
