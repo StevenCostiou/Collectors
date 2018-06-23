@@ -8,22 +8,21 @@ buildTransformationsIn: tab
 				display: selectedCollector configuration transformations;
 				updateOn: SelectedReificationsHaveChanged from: [ collectorAnnouncer weak ];
 				act: [ :presentation | 
-					| newTransfo |
+					| newTransfo name |
 					newTransfo := CollectEvaluation new.
-					selectedCollector configuration transformations
-						add:
-							(newTransfo
-								name: ((UIManager default request: 'Transformation Name' initialAnswer: 'a Transformation') ifNil: [ 'a Condition' ])).
+					name := self requestUniqueTransformationName.
+					name = ''
+						ifFalse: [ selectedCollector configuration transformations add: (newTransfo name: name) ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
 				act: [ :presentation | 
-					selectedCollector configuration transformations remove: presentation selection.
+					selectedCollector configuration transformations remove: presentation selection ifAbsent: [  ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
-					selectedCollector configuration transformations remove: presentation selection.
+					selectedCollector configuration transformations remove: presentation selection ifAbsent: [  ].
 					presentation update ]
 					entitled: 'Remove' ].
 	tab transmit
