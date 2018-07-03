@@ -11,16 +11,29 @@ buildTransformationsIn: tab
 					| newTransfo name |
 					newTransfo := CollectEvaluation new.
 					name := self requestUniqueTransformationName.
-					name = ''
-						ifFalse: [ selectedCollector configuration transformations add: (newTransfo name: name) ].
+					name ifNotEmpty: [ selectedCollector configuration transformations add: (newTransfo name: name) ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
+				act: [ :presentation | 
+					presentation selection
+						ifNotNil: [ | name |
+							name := self requestUniqueTransformationName.
+							name ifNotEmpty: [ presentation selection name: name ].
+							presentation update ] ]
+					icon: GLMUIThemeExtraIcons glamorousEdit
+					entitled: 'Rename';
 				act: [ :presentation | 
 					selectedCollector configuration transformations remove: presentation selection ifAbsent: [  ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
+				selectionAct: [ :presentation | 
+					| name |
+					name := self requestUniqueTransformationName.
+					name ifNotEmpty: [ presentation selection name: name ].
+					presentation update ]
+					entitled: 'Rename';
 				selectionAct: [ :presentation | 
 					selectedCollector configuration transformations remove: presentation selection ifAbsent: [  ].
 					presentation update ]

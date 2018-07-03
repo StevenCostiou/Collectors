@@ -7,18 +7,32 @@ buildConditionsIn: tab
 				title: 'Conditions';
 				display: selectedCollector configuration conditions;
 				act: [ :presentation | 
-					| newCond |
+					| newCond name |
 					newCond := CollectEvaluation new.
-					selectedCollector configuration conditions
-						add: (newCond name: ((UIManager default request: 'Condition Name' initialAnswer: 'a Condition') ifNil: [ 'a Condition' ])).
+					name := self requestUniqueConditionName.
+					name ifNotEmpty: [ selectedCollector configuration conditions add: (newCond name: name) ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousAdd
 					entitled: 'Add';
+				act: [ :presentation | 
+					presentation selection
+						ifNotNil: [ | name |
+							name := self requestUniqueConditionName.
+							name ifNotEmpty: [ presentation selection name: name ].
+							presentation update ] ]
+					icon: GLMUIThemeExtraIcons glamorousEdit
+					entitled: 'Rename';
 				act: [ :presentation | 
 					selectedCollector configuration conditions remove: presentation selection ifAbsent: [  ].
 					presentation update ]
 					icon: GLMUIThemeExtraIcons glamorousTrash
 					entitled: 'Remove';
+				selectionAct: [ :presentation | 
+					| name |
+					name := self requestUniqueConditionName.
+					name ifNotEmpty: [ presentation selection name: name ].
+					presentation update ]
+					entitled: 'Rename';
 				selectionAct: [ :presentation | 
 					selectedCollector configuration conditions remove: presentation selection.
 					presentation update ]

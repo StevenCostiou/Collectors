@@ -1,10 +1,12 @@
 building - configuration
 requestUniqueTransformationName
 	| name transfoNames |
-	name := UIManager default request: 'Transformation name' initialAnswer: ''.
-	name = ''
-		ifTrue: [ UIManager default alert: 'Transformations must be named' title: 'Invalid Name' ].
+	name := UIManager default request: 'Transformation name'.
+	(name isNil or: [ name isEmpty ])
+		ifTrue: [ UIManager default alert: 'You entered no name' title: 'Invalid Name'.
+			^ '' ].
 	transfoNames := selectedCollector configuration transformations collect: [ :transfo | transfo name ].
 	(transfoNames includes: name)
-		ifTrue: [ UIManager default alert: 'This transformation name already exists' title: 'Invalid Name'. name := '' ].
+		ifTrue: [ UIManager default alert: 'This transformation name already exists' title: 'Invalid Name'.
+			^ '' ].
 	^ name
