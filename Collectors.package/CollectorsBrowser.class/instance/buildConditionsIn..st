@@ -17,7 +17,7 @@ buildConditionsIn: tab
 				act: [ :presentation | 
 					presentation selection
 						ifNotNil: [ | name |
-							name := self requestUniqueConditionName.
+							name := self requestConditionRename: presentation selection name.
 							name ifNotEmpty: [ presentation selection name: name ].
 							presentation update ] ]
 					icon: GLMUIThemeExtraIcons glamorousEdit
@@ -29,7 +29,7 @@ buildConditionsIn: tab
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
 					| name |
-					name := self requestUniqueConditionName.
+					name := self requestConditionRename: presentation selection name.
 					name ifNotEmpty: [ presentation selection name: name ].
 					presentation update ]
 					entitled: 'Rename';

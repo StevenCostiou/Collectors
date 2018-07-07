@@ -1,7 +1,7 @@
 building - collectPoints visualization
 highlightItemSegmentIn: tab
 	tab transmit
-		from: #itemStack;
+		from: #subexpressions;
 		to: #itemSource;
 		andShow: [ :a :bitItem | 
 			bitItem

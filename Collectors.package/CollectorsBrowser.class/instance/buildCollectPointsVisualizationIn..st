@@ -9,12 +9,12 @@ buildCollectPointsVisualizationIn: aPresentation
 			browser
 				row: [ :r | 
 					r
-						column: #itemNodes span: 1;
+						column: #itemNodes span: 2;
 						column: #collectionTime span: 1;
-						column: #itemSource span: 2 ]
+						column: #subexpressions span: 2;
+						column: #itemSource span: 3 ]
 				span: 4.
-			browser row: #itemStack span: 4.
-			browser row: #actions span: 1 ].
+			browser row: #itemInspector span: 4 ].
 	self buildNodesVsualizationIn: tab.
 	self buildItemStackIn: tab.
-	self buildEmptyStackin: tab
+	self buildOmniscientItemInspectorIn: tab

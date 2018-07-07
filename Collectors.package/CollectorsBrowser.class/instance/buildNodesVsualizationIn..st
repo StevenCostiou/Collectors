@@ -12,9 +12,9 @@ buildNodesVsualizationIn: tab
 			| itemsByTime |
 			itemsByTime := (selectedCollector omniscientCollectedItems select: [ :item | item node == collectPoint ])
 				sorted: [ :item1 :item2 | item1 timestamp < item2 timestamp ].
-			a title: 'Collection time'.
+			a title: 'Time'.
 			a fastList
 				display: itemsByTime;
-				format: [ :item | item timestamp ].
+				format: [ :item | item timestamp print24 ].
 			a shouldValidate: true ].
 	self buildSourceIn: tab

@@ -5,7 +5,7 @@ collect: anArrayOfReifications
 	object := anArrayOfReifications second.
 	collector isInReplayMode
 		ifTrue: [ ^ self ].
-	(collector mustCollect: anArrayOfReifications)
+	((collector mustCollect: anArrayOfReifications) ifNil:[false])
 		ifFalse: [ collector trashDeepCollectedItems.
 			^ self ].
 	collector collectObject: object.

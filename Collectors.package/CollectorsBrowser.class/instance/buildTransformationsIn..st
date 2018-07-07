@@ -18,7 +18,7 @@ buildTransformationsIn: tab
 				act: [ :presentation | 
 					presentation selection
 						ifNotNil: [ | name |
-							name := self requestUniqueTransformationName.
+							name := self requestTransformationRename: presentation selection name.
 							name ifNotEmpty: [ presentation selection name: name ].
 							presentation update ] ]
 					icon: GLMUIThemeExtraIcons glamorousEdit
@@ -30,7 +30,7 @@ buildTransformationsIn: tab
 					entitled: 'Remove';
 				selectionAct: [ :presentation | 
 					| name |
-					name := self requestUniqueTransformationName.
+					name := self requestTransformationRename: presentation selection name.
 					name ifNotEmpty: [ presentation selection name: name ].
 					presentation update ]
 					entitled: 'Rename';

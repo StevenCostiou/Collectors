@@ -1,4 +1,4 @@
-building - collectPoints visualization
+building - configuration - deprecated
 buildButtonNamed: buttonName action: action label: label model: model in: composite
 	composite column: buttonName.
 	composite transmit

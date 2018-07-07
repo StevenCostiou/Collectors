@@ -1,4 +1,4 @@
-building - collectPoints visualization
+building - configuration - deprecated
 composeActionButtonsFor: item in: composite
 	| buttons |
 	buttons := composite tabulator.

@@ -1,4 +1,4 @@
-building - collectPoints visualization
+building - configuration - deprecated
 buildActionButtonsIn: tab
 	tab transmit
 		from: #itemStack;
