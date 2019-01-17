@@ -2,6 +2,9 @@ deep collection
 testDeepCollectInstVarWrite
 	| col items |
 	col := Collector collectInstVarNamed: 'instVar2' inClass: AnObjectWithInstVar.
+	col configuration
+		addReifications: #(#newValue).
+	col reinstall.
 	AnObjectWithInstVar new aMethodWithTempVar.
 	items := (col omniscientCollectedItems collect:[:item| item backInTimeItems]) removeFirst; flattened.
 	

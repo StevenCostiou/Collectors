@@ -3,6 +3,11 @@ testDeepCollectValue
 	| node col items |
 	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
 	col := Collector collectValue: node.
+	col configuration
+		addReifications: (node availableReifications select:[:r|
+		 	(#(#operation) includes: r) not]).
+	col reinstall.  
+
 	
 	AnObjectWithInstVar new aMethodWithTempVar.
 	

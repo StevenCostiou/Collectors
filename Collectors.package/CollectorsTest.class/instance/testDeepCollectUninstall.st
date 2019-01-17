@@ -1,6 +1,6 @@
 deep collection
 testDeepCollectUninstall
-	| node col items |
+	| node col  |
 	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
 	col := Collector collectValue: node.
 	

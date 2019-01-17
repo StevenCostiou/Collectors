@@ -1,4 +1,4 @@
-as yet unclassified
+api
 buildInComposite: composite
 	composite fastTable
 		title: self title;
