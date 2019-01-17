@@ -1,3 +1,5 @@
+Copy/paste in a playground and doIt.
+
 # Collectors
 ```Smalltalk
 Metacello new
