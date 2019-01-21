@@ -3,6 +3,6 @@ Copy/paste in a playground and doIt.
 ```Smalltalk
 Metacello new
     baseline: 'Collectors';
-    repository: 'github://ClotildeToullec/Collectors';
+    repository: 'github://StevenCostiou/Collectors';
     load.
 ```
