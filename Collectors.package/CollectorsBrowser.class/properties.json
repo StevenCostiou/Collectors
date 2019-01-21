@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "GLMCompositePresentation",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selectedCollector",
+		"collectors",
+		"itemSegment",
+		"stackedItemSegment",
+		"allReifications",
+		"reificationsHandler",
+		"reificationsBindings",
+		"collectorAnnouncer"
+	],
+	"name" : "CollectorsBrowser",
+	"type" : "normal"
+}

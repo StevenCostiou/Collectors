@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GTDebuggerInspector",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CollectorBrowserInspector",
+	"type" : "normal"
+}

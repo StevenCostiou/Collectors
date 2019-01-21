@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:51",
+	"super" : "ValueCollectInstaller",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ReceiverCollectInstaller",
+	"type" : "normal"
+}

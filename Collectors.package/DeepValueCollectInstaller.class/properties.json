@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ValueCollectInstaller",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"originalNode",
+		"control"
+	],
+	"name" : "DeepValueCollectInstaller",
+	"type" : "normal"
+}

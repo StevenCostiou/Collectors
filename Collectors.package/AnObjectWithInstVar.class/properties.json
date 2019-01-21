@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"instVar",
+		"instVar2"
+	],
+	"name" : "AnObjectWithInstVar",
+	"type" : "normal"
+}

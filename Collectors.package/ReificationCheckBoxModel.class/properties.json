@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reification",
+		"handler",
+		"state"
+	],
+	"name" : "ReificationCheckBoxModel",
+	"type" : "normal"
+}

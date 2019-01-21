@@ -1,0 +1,31 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"arguments",
+		"receiver",
+		"entity",
+		"link",
+		"name",
+		"oldValue",
+		"newValue",
+		"node",
+		"selector",
+		"sender",
+		"context",
+		"variable",
+		"collectedObject",
+		"sourceObject",
+		"sourceObjectClass",
+		"transformations",
+		"backInTimeItems",
+		"timestamp",
+		"objectReification"
+	],
+	"name" : "OmniscientItem",
+	"type" : "normal"
+}

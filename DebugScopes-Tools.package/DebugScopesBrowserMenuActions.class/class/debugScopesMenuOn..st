@@ -3,10 +3,10 @@ debugScopesMenuOn: aBuilder
 	<RubSmalltalkCodeMenu>
 	<contextMenu>
 	aBuilder
-		item: 'Collectors';
+		item: 'Debug Scopes';
 		selector: #value;
 		target: [  ];
 		keyText: 't ';
 		order: 0;
 		iconName: #workspace;
-		with: [ self buildCollectorsMenuOn: aBuilder ]
+		with: [ self buildSubMenuOn: aBuilder ]

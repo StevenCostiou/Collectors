@@ -1,0 +1,3 @@
+testing
+iconLabel: aNode
+	^ 'Uninstall'

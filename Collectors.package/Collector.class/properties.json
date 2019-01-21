@@ -1,0 +1,26 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:48",
+	"super" : "Object",
+	"category" : "Collectors-Model",
+	"classinstvars" : [
+		"registry"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collectedObjects",
+		"collectedClasses",
+		"enabled",
+		"collectAction",
+		"releaseAction",
+		"installer",
+		"omniscientCollectedItems",
+		"deepCollectedItems",
+		"isOmniscient",
+		"configuration",
+		"replayLink",
+		"deepCollectReifications"
+	],
+	"name" : "Collector",
+	"type" : "normal"
+}

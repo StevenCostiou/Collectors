@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RubTextSegmentMorph",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DBActivatorHighlightSegmentMorph",
+	"type" : "normal"
+}

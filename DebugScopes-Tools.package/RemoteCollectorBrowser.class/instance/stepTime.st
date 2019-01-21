@@ -1,3 +1,0 @@
-private
-stepTime
-	^ 250

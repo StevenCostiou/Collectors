@@ -1,0 +1,3 @@
+replay
+setReplayMode
+	replayMode := true

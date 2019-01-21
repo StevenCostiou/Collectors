@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CollectorsBrowser",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CollectorConfigurationEditor",
+	"type" : "normal"
+}

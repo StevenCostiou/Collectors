@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "StevenCostiou 3/29/2018 08:50",
+	"super" : "InstVarCollectInstaller",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"methodName"
+	],
+	"name" : "TempVarCollectInstaller",
+	"type" : "normal"
+}

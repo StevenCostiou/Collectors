@@ -1,0 +1,3 @@
+api
+strategyName
+	^ 'Evaluated Value'

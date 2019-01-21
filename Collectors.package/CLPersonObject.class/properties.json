@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"age",
+		"name",
+		"parent"
+	],
+	"name" : "CLPersonObject",
+	"type" : "normal"
+}

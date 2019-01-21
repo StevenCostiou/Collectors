@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "CollectorsBrowser",
+	"category" : "Collectors-Browser",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"collector",
+		"node"
+	],
+	"name" : "CollectPointInspector",
+	"type" : "normal"
+}

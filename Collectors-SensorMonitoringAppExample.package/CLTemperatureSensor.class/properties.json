@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CLGenericSensor",
+	"category" : "Collectors-SensorMonitoringAppExample",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CLTemperatureSensor",
+	"type" : "normal"
+}
