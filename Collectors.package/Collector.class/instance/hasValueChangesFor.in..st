@@ -11,6 +11,7 @@ hasValueChangesFor: anItem in: items
 	start to: stop by: -1 do: [ :i | 
 		| item |
 		item := items at: i.
-		(item sourceObject == anItem sourceObject and: [ item collectedObject ~= anItem collectedObject ])
+		(item sourceObject == anItem sourceObject
+			and: [ item collectedObject ~= anItem collectedObject ])
 			ifTrue: [ ^ true ] ].
 	^ false

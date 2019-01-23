@@ -21,12 +21,13 @@ compose
 				to: #time;
 				andShow: [ :a | 
 					a title: 'Collection time'.
-					a fastList
+					a act: [ self setDiffBlock ] icon: (Smalltalk iconNamed: #diff) entitled: 'Set diff block'.
+					a fastList					 
 						display: collector omniscientCollectedItems asSortedCollection;
 						format: [ :each | each timestamp ];
 						tagsStyle: #greenRoundedButton;
 						tags: [ :each | 
-							(collector hasIdentityChangesFor: each in: collector omniscientCollectedItems)
+							(collector valueChangedFor: each in: collector omniscientCollectedItems)
 								ifTrue: [ 'value change' ]
 								ifFalse: [ #() ] ] ].
 
@@ -49,9 +50,9 @@ compose
 							subNode := each node.
 							self
 								buildSubExpressionMorphFor: (subNode source copyFrom: subNode start to: subNode stop)
-								changeDetected: (collector hasValueChangesFor: each in: item backInTimeItems) ]
+								changeDetected: (collector valueChangedFor: each in: item backInTimeItems) ]
 							tags: [ :each | 
-								(collector hasValueChangesFor: each in: item backInTimeItems)
+								(collector valueChangedFor: each in: item backInTimeItems)
 									ifFalse: [ #() ]
 									ifTrue: [ 'value change' ] ] ].
 

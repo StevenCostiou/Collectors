@@ -19,7 +19,8 @@
 		"isOmniscient",
 		"configuration",
 		"replayLink",
-		"deepCollectReifications"
+		"deepCollectReifications",
+		"diffBlock"
 	],
 	"name" : "Collector",
 	"type" : "normal"
