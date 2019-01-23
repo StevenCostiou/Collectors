@@ -4,5 +4,5 @@ setDiffBlock
 		setDiffBlockFrom:
 			(UIManager default
 				request:
-					'How to compare objects? #equality, #identity or [:a :b| ...returns a boolean... ]').
+					'How to compare two collected objects? [:a :b| ...returns a boolean... ]').
 	self update
