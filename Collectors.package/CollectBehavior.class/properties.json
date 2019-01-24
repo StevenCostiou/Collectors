@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"replayValue"
-	],
+	"instvars" : [ ],
 	"name" : "CollectBehavior",
 	"type" : "normal"
 }

@@ -3,8 +3,6 @@ collect: anArrayOfReifications
 	| collector object |
 	collector := anArrayOfReifications first.
 	object := anArrayOfReifications second.
-	collector isInReplayMode
-		ifTrue: [ ^ self ].
 	((collector mustCollect: anArrayOfReifications) ifNil:[false])
 		ifFalse: [ collector trashDeepCollectedItems.
 			^ self ].
