@@ -1,13 +1,11 @@
 collecting
 omniscientCollect: anObject in: aCollector withReifications: anArrayOfReifications
-	
-	| item sortedReifications |
-	
-	sortedReifications := self
+	| item  |
+"	sortedReifications := self
 		sortReifications: anArrayOfReifications
-		with: aCollector reifications.
-	item := OmniscientItem
-		fromReifications: sortedReifications
-		forCollector: aCollector.
+		with: aCollector reifications."
+	item := OmniscientItem new.
+	item rawData: anArrayOfReifications.
+	item reificationSpec: aCollector reifications.
 	aCollector applyTransformationsTo: item from: anArrayOfReifications.
 	aCollector omniscientCollectItem: item

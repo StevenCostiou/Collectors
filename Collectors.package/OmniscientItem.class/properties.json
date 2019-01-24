@@ -6,6 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"rawData",
+		"reificationSpec",
 		"arguments",
 		"receiver",
 		"entity",
