@@ -8,16 +8,17 @@ installCollectorOn: node
 	installer originalNode: originalNode.
 	node isVariable
 		ifTrue: [ installer control: #before ].
-	reifications := OrderedCollection new.
-	reifications add: (RFLiteralVariableNode value: installer).
-	reifications add: installer collectorNode.
+	"reifications := OrderedCollection new."
+"	reifications add: (RFLiteralVariableNode value: installer)."
+"	reifications add: installer collectorNode.
 	reifications
 		addAll:
 			(node availableReifications
 				select: [ :r | collector installer reifications includes: r ]).
 
 	reifications addIfNotPresent: #value.
-	reifications remove: #variable ifAbsent: [  ].
-	installer reifications: reifications.
+	reifications remove: #variable ifAbsent: [  ]."
+
+	installer reifications: {installer collectorNode. #value. (RFLiteralVariableNode value:node). (RFLiteralVariableNode value:originalNode).}.
 	installer reinstall.
 	installers add: installer

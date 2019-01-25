@@ -1,3 +1,3 @@
 accessing
 instVar: anObject
-	instVar := anObject
+	instVar := anObject 

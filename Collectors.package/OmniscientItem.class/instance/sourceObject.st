@@ -1,3 +1,3 @@
 accessing
 sourceObject
-	^ sourceObject
+	^ sourceObject ifNil: [ rawData second ]

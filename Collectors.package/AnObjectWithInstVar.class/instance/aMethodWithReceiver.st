@@ -1,3 +1,3 @@
 testing
 aMethodWithReceiver
-	100 atRandom squared negated
+	100 atRandom squared negated 

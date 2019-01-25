@@ -1,3 +1,3 @@
 accessing
 variable
-	^ variable
+	^ self reificationNamed:#variable

@@ -1,3 +1,3 @@
 accessing
 entity
-	^ entity
+	^ self reificationNamed: #entity

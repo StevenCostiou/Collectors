@@ -1,4 +1,3 @@
 testing
 aMethodWithExpression
-	(100 atRandom) squared
-	
+	100 atRandom squared 

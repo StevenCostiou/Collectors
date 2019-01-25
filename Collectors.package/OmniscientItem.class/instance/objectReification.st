@@ -1,3 +1,3 @@
 accessing
 objectReification
-	^ objectReification
+	^ self reificationNamed: #object

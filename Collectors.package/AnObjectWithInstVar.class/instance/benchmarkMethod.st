@@ -1,3 +1,3 @@
 testing
 benchmarkMethod
-	100 atRandom squared crLog
+	100 atRandom squared crLog 

@@ -1,3 +1,3 @@
 accessing
 sourceObjectClass
-	^ sourceObjectClass
+	^ self sourceObject class

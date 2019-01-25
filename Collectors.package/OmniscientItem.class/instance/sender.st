@@ -1,3 +1,3 @@
 accessing
 sender
-	^ sender
+	^ self reificationNamed: #sender

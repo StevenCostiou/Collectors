@@ -1,3 +1,3 @@
 accessing
 newValue
-	^ newValue
+	^ self reificationNamed: #newValue
