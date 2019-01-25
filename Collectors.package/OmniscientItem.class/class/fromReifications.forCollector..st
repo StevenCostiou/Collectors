@@ -1,6 +1,6 @@
 instance creation
 fromReifications: reificationsDictionary forCollector: collector
-	| item |
+	"| item |
 	item := self new.
 	item arguments: (reificationsDictionary at: #arguments ifAbsent: [ nil ] ).
 	item receiver:(reificationsDictionary at: #receiver ifAbsent: [ nil ]).
@@ -22,4 +22,4 @@ fromReifications: reificationsDictionary forCollector: collector
 	item objectReification:(reificationsDictionary at: #object ifAbsent: [ nil ]).
 	item sourceObjectClass:(reificationsDictionary at: #class ifAbsent: [ nil ]).
 	item timestamp: Time now.
-	^ item
+	^ item"

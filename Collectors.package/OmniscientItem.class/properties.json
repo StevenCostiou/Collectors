@@ -8,25 +8,11 @@
 	"instvars" : [
 		"rawData",
 		"reificationSpec",
-		"arguments",
-		"receiver",
-		"entity",
-		"link",
-		"name",
-		"oldValue",
-		"newValue",
-		"node",
-		"selector",
-		"sender",
 		"context",
-		"variable",
-		"collectedObject",
 		"sourceObject",
-		"sourceObjectClass",
 		"transformations",
 		"backInTimeItems",
-		"timestamp",
-		"objectReification"
+		"timestamp"
 	],
 	"name" : "OmniscientItem",
 	"type" : "normal"

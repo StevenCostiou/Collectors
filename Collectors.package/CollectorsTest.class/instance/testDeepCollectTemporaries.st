@@ -19,7 +19,7 @@ testDeepCollectTemporaries
 	self assert: items first node parent == node.
 	self assert: items second node parent == node.
 
-	"self assert: items second oldValue equals: -1."
+	self assert: items second oldValue equals: -1.
 	self assert: items first node == node value.
 	self assert: items second node == node variable.
-	self assert: col omniscientCollectedItems first collectedObject == items last newValue
+	self assert: col omniscientCollectedItems first collectedObject == items last collectedObject

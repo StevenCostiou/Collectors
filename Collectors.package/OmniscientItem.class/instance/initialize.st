@@ -1,4 +1,5 @@
 initialization
 initialize
 	super initialize.
-	transformations := Dictionary new
+	transformations := Dictionary new.
+	timestamp := Time now
