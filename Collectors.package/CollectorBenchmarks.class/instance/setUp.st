@@ -1,5 +1,6 @@
 initialization
 setUp
+	Smalltalk garbageCollect.
 	node := (AnObjectWithInstVar >> #benchmarkMethod) ast body statements
 		first.
 	collector := Collector collectValue: node

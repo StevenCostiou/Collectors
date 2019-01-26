@@ -1,4 +1,4 @@
 as yet unclassified
 evaluateDeepCollectOverheadWeakRef
 	<script>
-	^ self new evaluateDeepCollectOverheadWeakRef
+	^ self new evaluateDeepCollectOverheadWeakRef inspect

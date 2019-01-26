@@ -1,3 +1,4 @@
-as yet unclassified
+benchmarking
 bench
-	^ [ 1000000 timesRepeat: [ object benchmarkMethod ] ] timeToRun
+	1 second wait.
+	^ [ 1000000 timesRepeat: [ object benchmarkMethod ] ] timeToRun"WithoutGC "
