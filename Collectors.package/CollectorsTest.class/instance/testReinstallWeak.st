@@ -10,7 +10,7 @@ testReinstallWeak
 	col reinstallWith: weakConfig.
 	self deny: (col installer reifications includes: #name).
 	self deny: (col reifications includes: #link).
-	self assert: col installer reifications size equals: 4.
+	self assert: col installer reifications size equals: 3.
 	self assert: col isOmniscient not.
 	self assert: col configuration reifications isEmpty.
 	self assert: col configuration conditions isEmpty.

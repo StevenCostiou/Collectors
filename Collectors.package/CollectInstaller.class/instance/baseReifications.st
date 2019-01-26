@@ -1,3 +1,3 @@
 initialization
 baseReifications
-	^ #(#value #node #context)
+	^ #(#value #node)
