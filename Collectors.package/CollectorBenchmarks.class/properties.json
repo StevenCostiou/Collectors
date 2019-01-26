@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Collectors-Tests",
+	"classinstvars" : [
+		"collector"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"node",
+		"collector",
+		"object"
+	],
+	"name" : "CollectorBenchmarks",
+	"type" : "normal"
+}
