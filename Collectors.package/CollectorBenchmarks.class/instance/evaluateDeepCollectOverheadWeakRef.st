@@ -4,7 +4,7 @@ evaluateDeepCollectOverheadWeakRef
 	baseExecTime := self bench.
 	self setUp.
 	instrumentedExecTime := self bench.
-	"self tearDown."
+	self tearDown.
 	overhead := (instrumentedExecTime / baseExecTime) asFloat - 1.
 	^ {baseExecTime.
 	instrumentedExecTime.
