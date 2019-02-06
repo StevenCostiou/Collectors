@@ -3,6 +3,7 @@ testReplayDisablesCollection
 	| node col object items val replayVal |
 	node := (AnObjectWithInstVar >> #aMethodWithReplay) ast statements first.
 	col := Collector collectValue: node.
+	col installer install.	
 	
 	object := AnObjectWithInstVar new.
 	val := object aMethodWithReplay.

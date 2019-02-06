@@ -3,6 +3,7 @@ testReplayCancel
 	| node col object items val newVal replayVal |
 	node := (AnObjectWithInstVar >> #aMethodWithReplay) ast statements first value.
 	col := Collector collectValue: node.
+	col installer install.	
 	
 	object := AnObjectWithInstVar new.
 	val := object aMethodWithReplay.

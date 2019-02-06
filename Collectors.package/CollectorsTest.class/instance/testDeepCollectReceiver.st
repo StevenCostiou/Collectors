@@ -3,6 +3,7 @@ testDeepCollectReceiver
 	| col node items |
 	node := (AnObjectWithInstVar >> #aMethodWithReceiver) ast statements first.
 	col := Collector collectReceiver: node.	
+	col installer install.	
 
 	AnObjectWithInstVar new aMethodWithReceiver.	
 	

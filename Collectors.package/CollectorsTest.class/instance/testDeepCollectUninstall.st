@@ -3,6 +3,7 @@ testDeepCollectUninstall
 	| node col  |
 	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
 	col := Collector collectValue: node.
+	col installer install.	
 	
 	self assert: node links size equals: 1.
 	self assert: node links first class == CollectorMetaLink.	

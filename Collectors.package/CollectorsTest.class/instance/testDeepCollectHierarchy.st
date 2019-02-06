@@ -2,7 +2,8 @@ deep collection
 testDeepCollectHierarchy
 	| node col items |
 	node := (AnObjectWithInstVar >> #aMethodWithTempVar) ast statements second.
-	col := Collector collectValue: node.	
+	col := Collector collectValue: node.
+	col installer install.	
 	
 	AnObjectWithInstVar new aMethodWithTempVar.
 	
