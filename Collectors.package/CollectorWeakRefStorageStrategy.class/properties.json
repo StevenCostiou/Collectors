@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CollectorStrongRefStorageStrategy",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CollectorWeakRefStorageStrategy",
+	"type" : "normal"
+}

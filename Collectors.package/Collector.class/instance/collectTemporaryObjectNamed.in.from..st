@@ -4,4 +4,4 @@ collectTemporaryObjectNamed: aVarName in: aMethodName from: aClass
 	installer varName: aVarName.
 	installer varClass: aClass.
 	installer methodName: aMethodName.
-	installer install
+	"installer install"
