@@ -8,7 +8,8 @@
 	"instvars" : [
 		"reifications",
 		"conditions",
-		"transformations"
+		"transformations",
+		"breakAfterCollect"
 	],
 	"name" : "CollectorConfiguration",
 	"type" : "normal"

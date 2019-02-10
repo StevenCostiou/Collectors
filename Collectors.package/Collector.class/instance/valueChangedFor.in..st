@@ -8,5 +8,8 @@ valueChangedFor: anItem in: items
 		ifTrue: [ items size ]
 		ifFalse: [ index - 1 ].
 	previousItem := items at: previousIndex.
-
-	^ self diffBlock value: anItem collectedObject value: previousItem collectedObject
+	^ [ self diffBlock
+		value: anItem collectedObject
+		value: previousItem collectedObject ]
+		on: Error
+		do: [ false ]

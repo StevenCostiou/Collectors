@@ -1,0 +1,3 @@
+storage - strategies
+omniscientItemClass
+	^ storageStrategy 

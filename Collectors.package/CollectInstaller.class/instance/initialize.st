@@ -1,6 +1,6 @@
 initialization
 initialize
 	super initialize.
-	behavior := CollectBehavior new.
+	self initializeCollectionbehavior.
 	self resetReifications.
 	self initializeLink

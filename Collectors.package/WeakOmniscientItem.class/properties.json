@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OmniscientItem",
+	"category" : "Collectors-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "WeakOmniscientItem",
+	"type" : "normal"
+}

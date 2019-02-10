@@ -10,6 +10,7 @@
 		"reifications",
 		"weakObject",
 		"behavior",
+		"selector",
 		"collectorNode",
 		"deepInstallers"
 	],

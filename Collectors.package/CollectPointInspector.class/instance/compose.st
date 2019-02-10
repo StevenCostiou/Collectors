@@ -23,8 +23,8 @@ compose
 					a title: 'Collection time'.
 					a act: [ self setDiffBlock ] icon: (Smalltalk iconNamed: #diff) entitled: 'Set diff block'.
 					a fastList					 
-						display: collector omniscientCollectedItems asSortedCollection;
-						format: [ :each | each timestamp ];
+						display: collector omniscientCollectedItems "asSortedCollection";
+						format: [ :each | each collectedObject printString ];
 						tagsStyle: #greenRoundedButton;
 						tags: [ :each | 
 							(collector valueChangedFor: each in: collector omniscientCollectedItems)
@@ -78,14 +78,14 @@ compose
 				to: #objectInspector;
 				when: [ :item | item notNil ];
 				andShow: [ :a :item | self buildOmniscientItemInspectorIn: a for: item ].
-			browser transmit
+			"browser transmit
 				from: #time;
 				to: #contextStack;
 				when: [ :item | item notNil ];
 				andShow: [ :a :item | 
 					a fastList
 						title: 'Stack';
-						display: item context ].
+						display: item context ]."
 			browser transmit
 				from: #contextStack;
 				to: #context;
