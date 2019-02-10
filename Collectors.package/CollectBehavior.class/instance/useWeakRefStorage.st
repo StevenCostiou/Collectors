@@ -1,3 +1,3 @@
 storage - strategies
 useWeakRefStorage
-	storageStrategy := OmniscientItem 
+	storageStrategy := WeakOmniscientItem 

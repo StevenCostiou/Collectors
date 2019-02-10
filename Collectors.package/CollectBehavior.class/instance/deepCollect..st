@@ -1,10 +1,7 @@
 collecting
 deepCollect: anArrayOfReifications
-	| "deepInstaller" collector  item |
-	"deepInstaller := anArrayOfReifications second."
+	| collector item |
 	collector := anArrayOfReifications first.
 	item := OmniscientItem new.
 	item rawData: anArrayOfReifications.
-	"item reificationSpec: deepInstaller reifications."
-	collector deepCollectItem: item for: nil"deepInstaller originalNode"
-	
+	collector deepCollectItem: item

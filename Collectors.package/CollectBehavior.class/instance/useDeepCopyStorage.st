@@ -1,3 +1,3 @@
 storage - strategies
 useDeepCopyStorage
-	storageStrategy := OmniscientItem 
+	storageStrategy := DeepCopiedOmniscientItem 

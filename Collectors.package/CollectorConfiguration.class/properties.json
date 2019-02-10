@@ -9,7 +9,8 @@
 		"reifications",
 		"conditions",
 		"transformations",
-		"breakAfterCollect"
+		"breakAfterCollect",
+		"capturedStackSize"
 	],
 	"name" : "CollectorConfiguration",
 	"type" : "normal"

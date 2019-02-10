@@ -1,3 +1,3 @@
 accessing
-rawData: anObject
-	rawData := WeakArray newFrom: anObject
+rawData: anArray
+	rawData := WeakArray newFrom: anArray

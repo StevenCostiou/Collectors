@@ -1,3 +1,3 @@
 behavior - collection
-deepCollectItem: anItem for: aTopLevelNode
+deepCollectItem: anItem
 	self deepCollectedItems add: anItem
