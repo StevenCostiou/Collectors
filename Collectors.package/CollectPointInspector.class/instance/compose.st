@@ -37,7 +37,7 @@ compose
 				to: #itemStack;
 				andShow: [ :a :item | 
 					| stack |
-					stack := item backInTimeItems copy.
+					stack := item backInTimeItems copy. self flag: 'That copy is suspicious...'.
 					stack add: item.
 					a title: 'Collected sub-expressions'.
 					a fastTable

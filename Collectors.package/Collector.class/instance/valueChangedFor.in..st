@@ -1,6 +1,7 @@
 testing
 valueChangedFor: anItem in: items
 	| index previousIndex previousItem |
+	items size <= 1 ifTrue:[^false].
 	index := items identityIndexOf: anItem.
 	index = 1
 		ifTrue: [ ^ false ].
