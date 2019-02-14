@@ -6,6 +6,6 @@ baseline: spec
 		do: [ 	spec baseline: 'ReflectivityDev' 
 				with: [ spec repository: 'github://StevenCostiou/Reflectivity-dev/repository' ].
 			spec blessing: #baseline.
-			spec repository: 'github://ClotildeToullec/Collectors'.
+			spec repository: 'github://StevenCostiou/Collectors'.
 			spec description: 'Collectors implementation'.
 			spec package: 'Collectors'. ]
