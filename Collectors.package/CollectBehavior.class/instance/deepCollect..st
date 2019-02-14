@@ -2,6 +2,6 @@ collecting
 deepCollect: anArrayOfReifications
 	| collector item |
 	collector := anArrayOfReifications first.
-	item := OmniscientItem new.
+	item := self omniscientItemClass new.
 	item rawData: anArrayOfReifications.
 	collector deepCollectItem: item
