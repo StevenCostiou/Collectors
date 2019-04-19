@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"storageStrategy"
+		"storageStrategy",
+		"captureCount"
 	],
 	"name" : "CollectBehavior",
 	"type" : "normal"

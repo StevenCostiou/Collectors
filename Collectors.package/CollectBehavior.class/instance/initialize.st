@@ -1,4 +1,5 @@
 initalize
 initialize
 	super initialize.
-	self useStrongRefStorage
+	self useStrongRefStorage.
+	captureCount := 0

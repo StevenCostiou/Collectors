@@ -10,6 +10,7 @@
 		"conditions",
 		"transformations",
 		"breakAfterCollect",
+		"breakAfterCount",
 		"capturedStackSize"
 	],
 	"name" : "CollectorConfiguration",
