@@ -1,8 +1,7 @@
 installing
 reinstallWith: aCollectorConfiguration
 	self isOmniscient
-		ifFalse: [ self reinstallWeakWith: aCollectorConfiguration.
-			^ self ].
+		ifFalse: [ ^ self reinstallWeakWith: aCollectorConfiguration ].
 	self configuration: aCollectorConfiguration.
 	installer resetReifications.
 	self addReifications: configuration reifications.
