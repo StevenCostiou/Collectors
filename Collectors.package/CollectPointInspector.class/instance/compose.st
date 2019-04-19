@@ -78,14 +78,14 @@ compose
 				to: #objectInspector;
 				when: [ :item | item notNil ];
 				andShow: [ :a :item | self buildOmniscientItemInspectorIn: a for: item ].
-			"browser transmit
+			browser transmit
 				from: #time;
 				to: #contextStack;
 				when: [ :item | item notNil ];
 				andShow: [ :a :item | 
 					a fastList
 						title: 'Stack';
-						display: item context ]."
+						display: item context ].
 			browser transmit
 				from: #contextStack;
 				to: #context;
