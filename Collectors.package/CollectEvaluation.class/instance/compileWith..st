@@ -15,4 +15,5 @@ compileWith: bindings
 	stream nextPut: $|.
 	stream nextPutAll: self source.
 	stream nextPut: $].
+stream contents inspect.
 	self block: (Smalltalk compiler evaluate: stream contents)

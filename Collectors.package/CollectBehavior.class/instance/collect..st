@@ -6,7 +6,7 @@ collect: anArrayOfReifications
 
 	((collector mustCollect: anArrayOfReifications) ifNil: [ false ])
 		ifFalse: [ collector trashDeepCollectedItems.
-			^ self ].
+			^ nil ].
 	self
 		omniscientCollect: object
 		in: collector

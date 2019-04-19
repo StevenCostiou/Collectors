@@ -20,7 +20,8 @@
 		"configuration",
 		"replayLink",
 		"deepCollectReifications",
-		"diffBlock"
+		"diffBlock",
+		"metaController"
 	],
 	"name" : "Collector",
 	"type" : "normal"

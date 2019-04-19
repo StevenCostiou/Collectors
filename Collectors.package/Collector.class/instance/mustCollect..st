@@ -5,4 +5,4 @@ mustCollect: reifications
 		into: [ :bool :condition | 
 			[ bool and: [ condition evaluateWith: reifications ] ]
 				on: Error
-				do: [ false ] ]
+				do: [:err| err crLog. false ] ]

@@ -1,0 +1,3 @@
+testing
+hasMetaController
+	^metaController notNil

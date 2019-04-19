@@ -1,4 +1,8 @@
 testing
 iconBlock: aNode
 	^ [ (self confirm: 'Uninstall Collector?')
-		ifTrue: [ aNode collector uninstall ] ]
+		ifTrue: [ | collector |
+			collector := aNode collector.
+			collector hasMetaController
+				ifTrue: [ collector metaController uninstall ]
+				ifFalse: [ collector uninstall ] ] ]
