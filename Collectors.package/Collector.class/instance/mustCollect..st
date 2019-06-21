@@ -1,8 +1,10 @@
 collecting - control
 mustCollect: reifications
-	^ configuration conditions
+	^ [ configuration conditions
 		inject: true
-		into: [ :bool :condition | 
-			[ bool and: [ condition evaluateWith: reifications ] ]
-				on: Error
-				do: [:err| err crLog. false ] ]
+		into:
+			[ :bool :condition | bool and: [ condition evaluateWith: reifications ] ] ]
+		on: Error
+		do: [ :err | 
+			err crLog.
+			false ]

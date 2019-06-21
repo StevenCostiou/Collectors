@@ -4,7 +4,7 @@ composeActionButtonsFor: item in: composite
 	buttons := composite tabulator.
 	self
 		buildButtonNamed: #inspectObject
-		label: 'Inspect Collected Object'
+		label: 'Inspect Mined Object'
 		model: [ item collectedObject inspect ]
 		color: Smalltalk ui theme windowColor
 		icon: (self iconNamed: #smallInspectIt)

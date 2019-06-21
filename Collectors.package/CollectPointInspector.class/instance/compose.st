@@ -20,9 +20,10 @@ compose
 			browser transmit
 				to: #time;
 				andShow: [ :a | 
-					a title: 'Collection time'.
+					a title: 'Mining result'.
 					a act: [ self setDiffBlock ] icon: (Smalltalk iconNamed: #diff) entitled: 'Set diff block'.
-					a fastList					 
+					a fastList
+						icon: [:each | ObjectMinersIcons minersMenuIcon];					 
 						display: collector omniscientCollectedItems "asSortedCollection";
 						format: [ :each | each collectedObject printString ];
 						tagsStyle: #greenRoundedButton;
@@ -39,7 +40,7 @@ compose
 					| stack |
 					stack := item backInTimeItems copy. self flag: 'That copy is suspicious...'.
 					stack add: item.
-					a title: 'Collected sub-expressions'.
+					a title: 'Mining results from sub-expressions'.
 					a fastTable
 						tagsStyle: #greenRoundedButton;
 						display: stack;
@@ -54,7 +55,7 @@ compose
 							tags: [ :each | 
 								(collector valueChangedFor: each in: item backInTimeItems)
 									ifFalse: [ #() ]
-									ifTrue: [ 'value change' ] ] ].
+									ifTrue: [ #()"'value change'" ] ] ].
 
 			"Transmit the selected item node the visualization"
 			browser transmit
