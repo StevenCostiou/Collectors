@@ -1,3 +1,3 @@
 accessing
 transformations
-	^ transformations
+	^ transformations ifNil:[^Dictionary new]

@@ -1,7 +1,9 @@
 collecting - control
 applyTransformationsTo: item from: reifications
-	configuration transformations
-		do: [ :transformation | 
-			item transformations
-				at: transformation name
-				put: (transformation evaluateWith: reifications) ]
+	| transformation |
+	configuration transformations isEmpty
+		ifTrue: [ ^ self ].
+	transformation := configuration transformation first.
+	item transformations
+		at: transformation first name
+		put: (transformation evaluateWith: reifications)
