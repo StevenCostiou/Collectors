@@ -86,7 +86,7 @@ compose
 				andShow: [ :a :item | 
 					a fastList
 						title: 'Stack';
-						display: item context ].
+						display: (item context ifNil:[OrderedCollection new]) ].
 			browser transmit
 				from: #contextStack;
 				to: #context;
