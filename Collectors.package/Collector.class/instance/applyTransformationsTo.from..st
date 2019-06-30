@@ -3,7 +3,7 @@ applyTransformationsTo: item from: reifications
 	| transformation |
 	configuration transformations isEmpty
 		ifTrue: [ ^ self ].
-	transformation := configuration transformation first.
+	transformation := configuration transformations first.
 	item transformations
-		at: transformation first name
+		at: transformation name
 		put: (transformation evaluateWith: reifications)
