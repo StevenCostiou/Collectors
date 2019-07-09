@@ -7,6 +7,6 @@ reinstallWith: aCollectorConfiguration
 	self addReifications: configuration reifications.
 	configuration compileConditionsWith: installer reifications.
 	configuration compileTransformationsWith: installer reifications.	
-	optimizedCondition := configuration conditions isEmpty ifTrue:[CollectEvaluation new] ifFalse:[configuration conditions first].
-	optimizedAction := configuration transformations isEmpty ifTrue:[CollectEvaluation new] ifFalse:[configuration transformations first].
+	optimizedCondition := configuration conditions isEmpty ifTrue:[CollectNullEvaluation new] ifFalse:[configuration conditions first].
+	optimizedAction := configuration transformations isEmpty ifTrue:[CollectNullEvaluation new] ifFalse:[configuration transformations first].
 	installer reinstall
