@@ -1,3 +1,3 @@
 accessing
 collectedObjects
-	^ collectedObjects ifNil: [ collectedObjects := WeakOrderedCollection new: 1000000]
+	^ collectedObjects ifNil: [ collectedObjects := WeakOrderedCollection new: 10000000]
