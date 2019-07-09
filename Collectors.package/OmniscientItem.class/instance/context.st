@@ -4,5 +4,5 @@ context
 
 	^ context
 		ifNil: [ rawData size >= 4
-				ifTrue: [ rawData fifth ]
+				ifTrue: [ rawData fourth ]
 				ifFalse: [ OrderedCollection new ] ]
