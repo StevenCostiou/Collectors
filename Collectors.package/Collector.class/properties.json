@@ -21,7 +21,9 @@
 		"replayLink",
 		"deepCollectReifications",
 		"diffBlock",
-		"metaController"
+		"metaController",
+		"optimizedCondition",
+		"optimizedAction"
 	],
 	"name" : "Collector",
 	"type" : "normal"
