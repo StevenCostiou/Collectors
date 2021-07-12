@@ -3,8 +3,7 @@ baseline: spec
 	<baseline>
 	spec
 		for: #common
-		do: [ 	spec baseline: 'ReflectivityDev' 
-				with: [ spec repository: 'github://StevenCostiou/Reflectivity-dev/repository' ].
+		do: [
 			spec blessing: #baseline.
 			spec repository: 'github://StevenCostiou/Collectors'.
 			spec description: 'Collectors implementation'.
