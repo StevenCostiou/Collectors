@@ -1,7 +1,7 @@
 main menu
 collectorMenuOn: aBuilder
-	<RubSmalltalkCodeMenu>
-	<contextMenu>
+	"<RubSmalltalkCodeMenu>
+	<contextMenu>"
 	aBuilder
 		item: 'Collect';
 		selector: #value;
