@@ -5,7 +5,7 @@ testDeepCollectTemporaries
 	col := Collector collectValue: node.	
 	col configuration
 		addReifications: (node availableReifications select:[:r|
-		 	(#(#operation) includes: r) not]).
+		 	(#(operation index) includes: r) not]).
 	col reinstall.  
 
 	AnObjectWithInstVar new aMethodWithTempVar.

@@ -1,7 +1,7 @@
 installing
 deepInstallOn: aNode
 	| collector deepInstaller |
-	collector := self collectorNode binding value.
+	collector := self collectorNode value.
 	deepInstaller := DeepCollectorInstaller new.
 	deepInstaller collector: collector.
 	deepInstaller originalNode: aNode.

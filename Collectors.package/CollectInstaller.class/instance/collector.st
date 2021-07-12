@@ -1,3 +1,3 @@
 accessing
 collector
-	^ self collectorNode binding value
+	^ self collectorNode value

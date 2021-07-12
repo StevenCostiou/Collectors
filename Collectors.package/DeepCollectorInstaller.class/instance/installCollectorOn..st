@@ -20,8 +20,8 @@ installCollectorOn: node
 	reifications remove: #variable ifAbsent: [  ]."
 	reifications := {installer collectorNode.
 	#value.
-	(RFLiteralVariableNode value: node).
-	(RFLiteralVariableNode value: originalNode)} asOrderedCollection.
+	(RBLiteralNode value: node).
+	(RBLiteralNode value: originalNode)} asOrderedCollection.
 	(node isVariable or: [ node isAssignment ])
 		ifTrue: [ reifications add: #newValue ].
 	installer reifications: reifications.

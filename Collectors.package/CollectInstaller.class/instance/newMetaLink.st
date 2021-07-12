@@ -1,3 +1,3 @@
 behavior
 newMetaLink
-	^ CollectorMetaLink on: self collectorNode binding value
+	^ CollectorMetaLink on: self collectorNode value
