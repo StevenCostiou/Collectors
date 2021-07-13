@@ -23,7 +23,7 @@ compose
 					a title: 'Mining result'.
 					a act: [ self setDiffBlock ] icon: (Smalltalk iconNamed: #diff) entitled: 'Set diff block'.
 					a fastList
-						icon: [:each | ObjectMinersIcons minersMenuIcon];					 
+						icon: [:each | ObmiIcons minersMenuIcon];					 
 						display: collector omniscientCollectedItems "asSortedCollection";
 						format: [ :each | each collectedObject printString ];
 						tagsStyle: #greenRoundedButton;
